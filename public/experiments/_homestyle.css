@@ -1,0 +1,30 @@
+.outerDiv {
+    margin:25px;
+    padding:25px
+}
+
+.border {
+    border:1px solid black;
+}
+
+.formMaker {
+    background-color:black;
+    color:white;
+    font-size:25px;
+    padding:10px;
+}
+
+.mainMenu {
+    background-color:red;
+    color:black;
+}
+
+.rightAlign {
+    float:right;
+    padding:10px;
+}
+
+
+.underline {
+    text-decoration: underline;
+}
