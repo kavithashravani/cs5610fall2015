@@ -21,15 +21,15 @@
          border-right: 1px solid #eee;
     }
 
-    .main {
-        padding-right: 40px;
-        padding-left: 40px;
-    }
+     .main {
+            padding-right: 40px;
+            padding-left: 40px;
+        }
 }
 
 .navbar-inverse {
     background-color: #334d5c;
-    background: #334d5c url("FormMaker.png") no-repeat fixed left top;
+    background: #334d5c url("../images/FormMaker.png") no-repeat fixed left top;
 }
 
 .navbar {
@@ -52,9 +52,21 @@
 }
 
 .form-control {
-    width: 70%;
+    width: 85%;
 }
 
 .btn-default {
     width: 70%;
+}
+
+.page-header {
+    border-bottom: 0px;
+}
+
+.glyphicon-plus, .glyphicon-ok, .glyphicon-pencil, .glyphicon-remove, .glyphicon-align-justify {
+    font-size:25px;
+}
+
+.btn-default {
+    width: 20%;
 }

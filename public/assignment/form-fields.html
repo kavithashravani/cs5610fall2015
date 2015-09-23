@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms page</title><link href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel = "stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link href = "css/style.css" rel = "stylesheet">
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+</head>
+<body >
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#"><h1>Form Maker</h1></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="profile.html">Username</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+< class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="home.html">Home <span class="sr-only">(current)</span></a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li class="active"><a href="#">Forms</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top:5%">
+            <h1 class="page-header">Forms</h1>
+            <div class = "row placeholders">
+                <div class="col-xs-9 col-sm-9 placeholder">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation"><a href="forms.html">Forms</a></li>
+                        <li role="presentation" class="active"><a href="#">Fields</a></li>
+                    </ul>
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <td><label for="inputFirstName">First Name:</label></td>
+                            <td><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" id="inputFirstName" placeholder="name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="inputLastName">Last Name:</label></td>
+                            <td><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" id="inputLastName" placeholder="Last Name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="inputDateOfBirth">Date of Birth</label></td>
+                            <td><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="date" class="form-control" id="inputDateOfBirth" placeholder="select Date"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="inputGender">Gender</label></td>
+                            <td><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><select id ="inputGender">
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td><label for="inputRoles">Roles</label></td>
+                            <td><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id ="inputRoles" type="checkbox" name="Admin" value="Admin">&nbsp Admin
+                                <br>
+                                <input type="checkbox" name="Student" value="Student">&nbsp Student<br>
+                                <input type="checkbox" name="User" value="User">&nbsp User
+                        </tr>
+                        <tr>
+                            <td><label for="inputLicenseAgreement">Licence Agreement</label></td>
+                            <td><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="inputLicenseAgreement" type="radio" name="yes" value="yes" checked>&nbsp Yes<br>
+                                <input type="radio" name="no" value="no">&nbsp No
+                        </tr>
+                        <tr>
+                            <td><label for="inputLicenseAgreement">Add New Field:</label></td>
+                            <td>
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select>
+                                    <option value="Female">Single Line Text</option>
+                                    <option value="Male">Date</option>
+                                    <option value="Female">Dropdown</option>
+                                    <option value="Male">Checkboxes</option>
+                                    <option value="Female">Radio buttons</option>
+                                    <option value="Male">Paragraph Text Field</option>
+                                </select>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<div>
+
+</body>
+</html>
