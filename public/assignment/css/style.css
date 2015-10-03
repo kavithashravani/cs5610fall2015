@@ -1,47 +1,44 @@
-.sidebar {
-    display: none;
+
+@media (min-width: 768px) {
+   .sidebar {
+        top: 75px;
+    }
 }
 
 .main {
-    padding: 20px;
+        padding-right: 40px;
+        padding-left: 40px;
+        margin-top: 5%;
+     }
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: left;
 }
 
-@media (min-width: 768px) {
-    .sidebar {
-        position: fixed;
-        top: 75px;
-         bottom: 0;
-         left: 0;
-         z-index: 1000;
-         display: block;
-         padding: 20px;
-         overflow-x: hidden;
-         overflow-y: auto;
-         background-color: #f5f5f5;
-         border-right: 1px solid #eee;
-    }
-
-     .main {
-            padding-right: 40px;
-            padding-left: 40px;
-        }
+.form-field-placeholders {
+    margin-left: 0%;
+    margin-top: 2%
 }
 
-.navbar-inverse {
-    background-color: #334d5c;
-    background: #334d5c url("../images/FormMaker.png") no-repeat fixed left top;
-}
+.btns-placeholders {
+        margin-bottom: 11%;
+ }
 
 .navbar {
     min-height: 80px;
 }
 
+.navbar-inverse {
+	background: #000000 url("../images/FormMaker.png") no-repeat fixed left top;
+}
+
 .navbar-brand h1 {
-    color: #ffd54d;
+    color: #ffffff;
     font-size: 42px;
     font-weight: bold;
     margin: 0;
-    margin-left:15px;
+    margin-left:20px;
 }
 
 .navbar-collapse.collapse {
@@ -55,18 +52,23 @@
     width: 85%;
 }
 
-.btn-default {
-    width: 70%;
+.btn-wdth {
+    width: 85%;
 }
 
 .page-header {
     border-bottom: 0px;
 }
 
+
 .glyphicon-plus, .glyphicon-ok, .glyphicon-pencil, .glyphicon-remove, .glyphicon-align-justify {
-    font-size:25px;
+    font-size:20px;
 }
 
-.btn-default {
-    width: 20%;
+.glyphicon-placeholder {
+    margin-top: 2%;
+}
+
+.glyphicon-plus-placeholder {
+    margin-left: 15%;
 }
