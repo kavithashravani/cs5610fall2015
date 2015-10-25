@@ -33,7 +33,7 @@
         }
 
         function createUser(user, userCallback) {
-            user.id = guid;
+            user.id = guid();
             current_users.push(user);
             userCallback(user);
         }
