@@ -1,0 +1,47 @@
+(function() {
+    angular
+        .module("FormBuilderApp")
+        .controller("FormController", FormController);
+
+    function FormController($scope, $location, $rootScope, FormService) {
+        $scope.$location = $location;
+        $scope.addForm = addForm;
+        $scope.updateForm = updateForm;
+        $scope.deleteForm = deleteForm;
+        $scope.selectForm = selectForm;
+        $scope.newForm = {};
+
+        var curUserId = $rootScope.currentUser.id;
+        FormService.findAllFormsForUser(curUserId, function(forms) {
+            $scope.forms = forms;
+        });
+
+        function addForm() {
+            var form = {name: $scope.form.name};
+            FormService.createFormForUser($scope.curUserId, form, function(newForm) {
+                        $scope.forms.push(newForm);
+            });
+        }
+
+        function deleteForm(index) {
+            FormService.deleteFormById($scope.forms[index].id, function(forms) {
+               $scope.forms = forms;
+            });
+        }
+
+        function updateForm() {
+            if($scope.selectedForm) {
+                var newForm = {name: $scope.form.name};
+                FormService.updateFormById($scope.selectedForm.id, newForm, function(updatedForm) {
+
+                });
+            }
+        }
+
+        function  selectForm(index) {
+            $scope.form.name = $scope.forms[index].name;
+            $scope.selectedForm = $scope.forms[index];
+        }
+    }
+
+})();

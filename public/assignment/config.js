@@ -21,7 +21,7 @@
                 controller: "ProfileController"
             })
             .when("/form", {
-                templateUrl: "/form/form.view.html",
+                templateUrl: "form/form.view.html",
                 controller: "FormController"
             })
             .otherwise({

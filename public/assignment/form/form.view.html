@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<h1 class="page-header">Forms</h1>
+<div class = "row placeholders">
+    <div class="col-xs-9 col-sm-9 placeholder">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">Forms</a></li>
+            <li role="presentation"><a href="form-fields.html">Fields</a></li>
+        </ul>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Form Name</th>
+                <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Action</th>
+            </tr>
+            <tr>
+                <td><input ng-model="form.name" type="text" class="form-control" id="inputFormname" placeholder="name"></td>
+                <td><div class="col-xs-6 col-sm-6">
+                    <button ng-click="addForm()" class="glyphicon glyphicon-plus btn btn-success btn-xs" aria-hidden="true"></button>
+                </div>
+                    <div class="col-xs-6 col-sm-6">
+                        <button ng-click= "updateForm()" class="glyphicon glyphicon-ok btn btn-warning btn-xs" aria-hidden="true"></button>
+                    </div>
+                </td>
+            </tr>
+            <tr ng-repeat="form in forms">
+                <td>{{form.name}}</td>
+                <td><div class="col-xs-6 col-sm-6">
+                    <button ng-click="deleteForm($index)" class="glyphicon glyphicon-remove btn btn-danger btn-xs" aria-hidden="true"></button>
+                </div>
+                    <div class="col-xs-6 col-sm-6">
+                        <button ng-click= "selectForm($index)" class="glyphicon glyphicon-pencil btn btn-primary btn-xs" aria-hidden="true"></button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
