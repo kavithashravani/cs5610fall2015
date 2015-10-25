@@ -9,7 +9,6 @@
         $scope.updateForm = updateForm;
         $scope.deleteForm = deleteForm;
         $scope.selectForm = selectForm;
-        $scope.newForm = {};
 
         var curUserId = $rootScope.currentUser.id;
         FormService.findAllFormsForUser(curUserId, function(forms) {

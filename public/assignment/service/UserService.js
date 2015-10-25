@@ -39,19 +39,18 @@
         }
 
         function deleteUserById(id, userCallback) {
-            var index = 0;
-            for(var user in current_users) {
-                if(user.id == id) {
-                    current_users.splice(index, 1);
+            for(var i = 0; i < current_users.length; i++) {
+                if(current_users[i].id == id) {
+                    current_users.splice(i, 1);
                 }
-                index += 1;
             }
             userCallback(current_users);
         }
 
         function updateUser(id, updateUser, userCallback) {
             var updatedUser = null;
-            for(var user in current_users) {
+            for(var i = 0; i < current_users.length; i++) {
+                var user = current_users[i];
                 if(user.id == id) {
                     user.name = updateUser.name;
                     user.password= updateUser.password;
