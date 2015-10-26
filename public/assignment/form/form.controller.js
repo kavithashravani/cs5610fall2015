@@ -18,8 +18,11 @@
         function addForm() {
             var form = {name: $scope.form.name};
             FormService.createFormForUser($scope.curUserId, form, function(newForm) {
-                        $scope.forms.push(newForm);
-                        $scope.form = {};
+                var index = $scope.forms.indexOf(newForm);
+                if(index == -1) {
+                    $scope.forms.push(newForm);
+                }
+                $scope.form = {};
             });
         }
 
