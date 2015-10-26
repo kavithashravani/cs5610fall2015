@@ -19,6 +19,7 @@
             var form = {name: $scope.form.name};
             FormService.createFormForUser($scope.curUserId, form, function(newForm) {
                         $scope.forms.push(newForm);
+                        $scope.form = {};
             });
         }
 
@@ -32,7 +33,7 @@
             if($scope.selectedForm) {
                 var newForm = {name: $scope.form.name};
                 FormService.updateFormById($scope.selectedForm.id, newForm, function(updatedForm) {
-
+                    $scope.form = {};
                 });
             }
         }

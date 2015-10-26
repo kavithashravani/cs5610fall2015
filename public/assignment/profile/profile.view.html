@@ -1,34 +1,34 @@
 <h1 class="page-header">Profile</h1>
 
-<form class="form-horizontal">
+<div class="form-horizontal">
     <div class="form-group">
         <label for="inputUsername" class="col-sm-2 control-label">Username</label>
         <div class="col-sm-10">
-            <input ng-model= "user.username" type="text" class="form-control" id="inputUsername" placeholder="username" value="{{curUser.username}}">
+            <input ng-model= "user.username" type="text" class="form-control" id="inputUsername" placeholder="username" >
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
         <div class="col-sm-10">
-            <input ng-model= "user.password" type="password" class="form-control" id="inputPassword3" placeholder="Password" name="{{curUser.password}}">
+            <input ng-model= "user.password" type="password" class="form-control" id="inputPassword3" placeholder="Password" >
         </div>
     </div>
     <div class="form-group">
         <label for="inputFirstName" class="col-sm-2 control-label">First Name</label>
         <div class="col-sm-10">
-            <input ng-model= "user.firstName" type="text" class="form-control" id="inputFirstName" placeholder="First Name" name="{{curUser.firstName}}">
+            <input ng-model= "user.firstName" type="text" class="form-control" id="inputFirstName" placeholder="First Name" >
         </div>
     </div>
     <div class="form-group">
         <label for="inputLastName" class="col-sm-2 control-label">Last Name</label>
         <div class="col-sm-10">
-            <input ng-model= "user.lastName" type="text" class="form-control" id="inputLastName" placeholder="Last Name" name="{{curUser.lastName}}">
+            <input ng-model= "user.lastName" type="text" class="form-control" id="inputLastName" placeholder="Last Name" >
         </div>
     </div>
     <div class="form-group">
         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-10">
-            <input ng-model= "user.email" type="email" class="form-control" id="inputEmail"  placeholder="email" name="{{curUser.email}}">
+            <input ng-model= "user.email" type="email" class="form-control" id="inputEmail"  placeholder="email">
         </div>
     </div>
     <div class="form-group">
@@ -36,4 +36,4 @@
             <a ng-click="update()" class="btn btn-default btn-wdth" role="button">Update</a>
         </div>
     </div>
-</form>
+</div>
