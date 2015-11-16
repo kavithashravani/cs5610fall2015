@@ -26,7 +26,10 @@
     "body-parser": "^1.14.1",
     "connect": "^3.4.0",
     "express": "~3.4.4",
+    "guid": "0.0.12",
+    "node-uuid": "^1.4.7",
     "q": "^1.4.1",
+    "restler": "^3.4.0",
     "uuid": "^2.0.1"
   },
   "devDependencies": {},
