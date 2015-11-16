@@ -6,27 +6,27 @@ module.exports = function(app, userModel) {
     });
 
     app.get("/api/assignment/user", function(req, res) {
-            //var username = req.params["username"];
-            //var password = req.params["password"];
             var username = req.query.username;
             var password = req.query.password;
-            if(username == null && password == null) {
+            var u = req.params["username"];
+            var p = req.params["password"];
+            if(username == "undefined" && password == "undefined") {
                 res.json(userModel.FindAll());
             }
-            else if(username != null && password == null) {
+            else if(username != "undefined" && password == "undefined") {
                 res.json(userModel.findUserByUsername(username));
             }
-            else if(username != null && password != null) {
+            else if(username != "undefined" && password != "undefined") {
                 res.json(userModel.findUserByCredentials(username, password));
              }
     });
 
-    app.get(" /api/assignment/user/:id", function(req, res) {
+    app.get("/api/assignment/user/:id", function(req, res) {
             res.json(userModel.FindById(req.params.id));
     });
 
     app.put("/api/assignment/user/:id", function(req, res) {
-            res.json(userModel.Update(req.params.id));
+            res.json(userModel.Update(req.params.id, req.body));
     });
 
     app.delete("/api/assignment/user/:id", function(req, res) {

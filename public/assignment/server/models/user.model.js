@@ -3,7 +3,7 @@ var uuid = require('node-uuid');
 
 module.exports = function(app) {
     var userApi = {
-        create: create,
+        Create: Create,
         FindAll: FindAll,
         FindById: FindById,
         Update: Update,
@@ -13,7 +13,7 @@ module.exports = function(app) {
     }
     return userApi;
 
-    function create(user) {
+    function Create(user) {
         user.id = uuid.v1();
         users.push(user);
         return users;
@@ -33,15 +33,11 @@ module.exports = function(app) {
     }
 
     function Update(id, newUser) {
-        for(var i = 0; i< users.length; i++) {
-            if(users[i].id == id) {
-                users[i].firstName = newUser.firstName;
-                users[i].lastName = newUser.lastName;
-                users[i].username = newUser.username;
-                users[i].password = newUser.password;
-            }
+        var user = FindById(id)
+        for(var key in newUser) {
+            user[key] = newUser[key];
         }
-        return users;
+        return user;
     }
 
     function  Delete(id) {

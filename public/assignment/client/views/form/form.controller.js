@@ -10,7 +10,6 @@
         formModel.updateForm = updateForm;
         formModel.deleteForm = deleteForm;
         formModel.selectForm = selectForm;
-        //$scope.findAllFormsForUser = findAllFormsForUser;
 
         var curUserId = $rootScope.currentUser.id;
 

@@ -4,9 +4,10 @@
         .module("FormBuilderApp")
         .controller("FieldController", FieldController);
 
-    function FieldController($routeParams, FieldService) {
+    function FieldController($rootScope, $routeParams, FieldService) {
         var userId = $routeParams["userId"];
         var formId = $routeParams["formId"];
+        var currentUser = $rootScope.currentUser;
         var fieldModel = this;
 
         fieldModel.addField = addField;
