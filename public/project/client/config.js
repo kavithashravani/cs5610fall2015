@@ -8,8 +8,8 @@
             .when("/home",{
 //                templateUrl: "views/slider/slider.view.html",
 //                controller: "SliderController"
-                  templateUrl: "views/subscribe/subscribe.view.html",
-                  controller: "SubscribeController"
+                  templateUrl: "views/search/search.view.html",
+                  controller: "SearchController"
             })
             .when("/food-log",{
                 templateUrl: "views/foodLog/foodLog.view.html",

@@ -1,0 +1,74 @@
+
+@media (min-width: 768px) {
+   .sidebar {
+        top: 75px;
+    }
+}
+
+.main {
+        padding-right: 40px;
+        padding-left: 40px;
+        margin-top: 5%;
+     }
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.form-field-placeholders {
+    margin-left: 0%;
+    margin-top: 2%
+}
+
+.btns-placeholders {
+        margin-bottom: 13%;
+ }
+
+.navbar {
+    min-height: 80px;
+}
+
+.navbar-inverse {
+	background: #000000 url("../images/FormMaker.png") no-repeat fixed left top;
+}
+
+.navbar-brand h1 {
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: bold;
+    margin: 0;
+    margin-left:20px;
+}
+
+.navbar-collapse.collapse {
+    margin-top: 12px;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.btn-wdth {
+    width: 100%;
+}
+
+.page-header {
+    border-bottom: 0px;
+}
+
+
+.glyphicon-plus, .glyphicon-ok, .glyphicon-pencil, .glyphicon-remove, .glyphicon-align-justify {
+    font-size:20px;
+}
+
+.glyphicon-placeholder {
+    margin-top: 2%;
+}
+
+.glyphicon-plus-placeholder {
+    margin-left: 15%;
+}
