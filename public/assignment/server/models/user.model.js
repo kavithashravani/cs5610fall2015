@@ -2,7 +2,7 @@ var users = require("../models/user.mock.json");
 var uuid = require('node-uuid');
 var q = require("q");
 
-module.exports = function(app, mongoose) {
+module.exports = function(app, mongoose, db) {
     var UserSchema = require("./user.schema.js")(mongoose);
     var UserModel = mongoose.model("UserModel", UserSchema)
 

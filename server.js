@@ -5,8 +5,18 @@ var LocalStrategy = require('passport-local').Strategy;
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/cs5610');
-//console.log(mongoose);
+
+var connectionString = 'mongodb://localhost/cs5610/formBuilderApp';
+
+if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
+    connectionString = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+        process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+        process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+        process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+        process.env.OPENSHIFT_APP_NAME;
+}
+
+var db = mongoose.connect(connectionString);
 
 app.use(express.bodyParser());
 app.use(session({secret: 'this is secret', resave: false, saveUninitialized: false}));
@@ -45,5 +55,5 @@ passport.deserializeUser(function(user, done)
 });
 
 require("./public/project/server/app.js")(app, mongoose, passport);
-require("./public/assignment/server/app.js")(app, mongoose);
+require("./public/assignment/server/app.js")(app, mongoose, db);
 app.listen(port, ipaddress);
