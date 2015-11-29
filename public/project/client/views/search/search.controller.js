@@ -11,7 +11,7 @@
         function search() {
             SearchService.findItems($scope.searchItem)
                 .then(function(searchResults) {
-                    $scope.searchResults = searchResults.foods.food;
+                    $scope.searchResults = searchResults.recipes.recipe;
                     console.log(searchResults);
             });
         }

@@ -21,7 +21,7 @@
                 </td>
             </tr>
             <tr ng-repeat="form in formModel.forms">
-                <td><a href="#/user/{{form.userId}}/form/{{form.id}}/fields">{{form.title}}</a></td>
+                <td><a href="#/user/{{form.userId}}/form/{{form._id}}/fields">{{form.title}}</a></td>
                 <td><div class="col-xs-6 col-sm-6">
                     <button ng-click="formModel.deleteForm($index)" class="glyphicon glyphicon-remove btn btn-danger btn-xs" aria-hidden="true"></button>
                 </div>

@@ -15,7 +15,7 @@
         profileModel.user.email = profileModel.curUser.email;
 
         function update() {
-            profileModel.curUserId = profileModel.curUser.id;
+            profileModel.curUserId = profileModel.curUser._id;
             UserService.updateUser(profileModel.curUserId, profileModel.user)
                 .then(function(updatedUser) {
                     profileModel.curUser = updatedUser;

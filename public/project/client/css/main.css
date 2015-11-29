@@ -264,7 +264,7 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
     about-us Start
 --*/
 #about-us {
-  padding: 100px 0px;
+  padding: 30px 0px;
   background: #F6F6F6;
 }
 #about-us .block {
@@ -492,7 +492,7 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 #subscribe {
   padding: 280px 0px;
   text-align: center;
-  background: url("../images/search-bg.jpg");
+  background: #FFFFFF/*#F6F6F6 /*url("../images/search-bg.jpg")*/;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -508,8 +508,8 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
   top: 0;
   width: 100%;
   height: 100%;
-  background: url("../images/overlay-pattern.png") #000000;
-  opacity: 0.3;
+  /*background: url("../images/overlay-pattern.png") #000000;*/
+  /*opacity: 0.3;*/
 }
 #subscribe .block h1.heading {
   color: #fff;
@@ -704,11 +704,106 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 
 /* I defined styles */
 .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-      display: block;
-      max-width: 100%;
-      height: 15%;
-      max-height: 15%;
-      width: 100%
+  display: block;
+  max-width: 100%;
+  height: 15%;
+  max-height: 15%;
+  width: 100%
+}
+
+img {
+  width:170px;
+  height: 170px;;
+}
+
+#image-details {
+  width:200px;
+  height: 200px;
+  padding: 10px 2px 2px 0px;
+}
+
+.recipe-name {
+  padding-top: 25px;
+ /* padding-left: 27px;*/
+  font-family: "Times New Roman";
+  font-size: 30px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.recipe-description {
+  font-family: "comic sans";
+  padding-left: 0px;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.serving {
+  width: /*15vw; */10vw;
+  height: /*26vh; */5vw;
+  background: #d9edf7;
+  padding: 12px 0px 11px 0px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.serving-content {
+  font-size: 14px;
+  font-family: "Times New Roman";
+  padding-left: 9px;
+}
+
+.nutrition-facts {
+  width: 15vw;
+  height: /*56vh;*/12vw;
+  background: #d9edf7;
+  padding: 17px 0px 11px 0px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+.nutrtn-facts {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.facts-cntnt {
+  font-weight: 600;
+}
+
+.log-calories {
+  padding-top: 60px;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0;
+ /* margin-left: 112px; */
+  border-top: 1px solid #C3B6B6;
+}
+
+.description {
+
+  font-family: cursive;
+  font-weight: normal;
+  text-align: justify;
+ /* margin-left: 122px;*/
+  margin-top: 1px;
+}
+
+.ingredient-description {
+  color: #0073FF;
+}
+
+.direction-description {
+  color: black;
 }
 
 time.icon

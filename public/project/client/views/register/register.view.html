@@ -10,27 +10,40 @@
                     <h3 class="title wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">Sign Up for <span>Diet Tracker</span> </h3>
                     <form>
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">
-                            <label for="firstName" class="control-label">First Name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="First Name">
-                        </div>
-                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">
-                            <label for="lastName" class="control-label">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
-                        </div>
-                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="800ms">
-                            <label for="emailId" class="control-label">Email</label>
-                            <input type="email" class="form-control" id="emailId" placeholder="Email">
+                            <label for="userName" class="control-label">User Name</label>
+                            <input ng-model="registerModel.userName" type="text" class="form-control" id="userName" placeholder="User Name">
                         </div>
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1000ms">
                             <label for="password" class="control-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <input ng-model="registerModel.password" type="password" class="form-control" id="password" placeholder="Password">
                         </div>
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1000ms">
                             <label for="confirmPassword" class="control-label">Confirm Password</label>
-                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confrim Password">
+                            <input ng-model="registerModel.confirmPassword" type="password" class="form-control" id="confirmPassword" placeholder="Confrim Password">
                         </div>
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">
+                            <label for="firstName" class="control-label">First Name</label>
+                            <input ng-model="registerModel.firstName" type="text" class="form-control" id="firstName" placeholder="First Name">
+                        </div>
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">
+                            <label for="lastName" class="control-label">Last Name</label>
+                            <input ng-model="registerModel.lastName" type="text" class="form-control" id="lastName" placeholder="Last Name">
+                        </div>
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="800ms">
+                            <label for="emailId" class="control-label">Email</label>
+                            <input ng-model="registerModel.emailId" type="email" class="form-control" id="emailId" placeholder="Email">
+                        </div>
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="800ms">
+                            <label for="age" class="control-label">Age</label>
+                            <input ng-model="registerModel.age" type="text" class="form-control" id="age" placeholder="Age">
+                        </div>
+                        <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="800ms">
+                            <label for="weight" class="control-label">Weight</label>
+                            <input ng-model="registerModel.weight" type="text" class="form-control" id="weight" placeholder="Weight">
+                        </div>
+
                     </form>
-                    <a class="btn btn-default wow bounceIn" data-wow-duration="500ms" data-wow-delay="1300ms" ng-click="signup()" role="button">Sign Up</a>
+                    <a class="btn btn-default wow bounceIn" data-wow-duration="500ms" data-wow-delay="1300ms" ng-click="registerModel.register()" role="button">Sign Up</a>
                 </div>
             </div><!-- .col-md-12 close -->
         </div><!-- .row close -->

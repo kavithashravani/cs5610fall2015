@@ -17,24 +17,21 @@
                             </div>
                         </div>
                     </form>
-                    <table class="table table-striped">
+                    <table class="table table-stripped">
+                        <tr>
+                            <th  style="color:white; font-weight: bold">FoodId</th>
+                            <th  style="color:white; font-weight: bold">FoodName</th>
+                            <th  style="color:white; font-weight: bold">Food Description</th>
+                        </tr>
                         <!--recipe_description: "A low carb and low fat banana bread recipe that's perfect for ripe bananas."-->
                         <!--recipe_id: "68579"-->
                         <!--recipe_image: "http://m.ftscrt.com/static/recipe/a60a2aa2-2cfb-4685-9b16-b2dca0fecced.jpg"-->
                         <!--recipe_name: "Banana Bread II"-->
                         <!--recipe_url: "http://www-->
                         <tr ng-repeat="result in searchResults">
-
-                            <td><a href="#/food-details/{{result.recipe_id}}"><img ng-src ="{{result.recipe_image}}"></a></td>
-                            <td style="color: #A666AB; font-family: 'Comic Sans';">
-                            <a href="#/food-details/{{result.recipe_id}}"><span style="font-weight: bold"> {{result.recipe_name}} </span>
-                                    <br><br><br>
-                                    {{result.recipe_description}}
-                            </a>
-                                </td>
-
-
-
+                            <td style="color:white; font-weight: bold"><img ng-src ="{{result.recipe_image}}"></td>
+                            <td style="color:white; font-weight: bold">{{result.recipe_name}}</td>
+                            <td style="color:white; font-weight: bold">{{result.recipe_description}}</td>
                         </tr>
                     </table>
                 </div>

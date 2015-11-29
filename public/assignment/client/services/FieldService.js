@@ -16,7 +16,7 @@
                 "id": null, "label": "New Date Field", "type": "DATE"
             },
             "dropDown": {
-                "id": null, "label": "New Dropdown", "type": "OPTIONS",
+                "id": null, "label": "New Dropdown", "type": "SELECT",
                 "options": [
                     {"label": "Option 1", "value": "OPTION_1"},
                     {"label": "Option 2", "value": "OPTION_2"},
@@ -51,7 +51,7 @@
 
         function createFieldForForm(formId, fieldType) {
             var deferred = $q.defer();
-            $http.post("/api/assignment/form/"+formId+"/field", fieldTypeObj[fieldType])
+            $http.post("/api/assignment/form/"+formId+"/field", fieldTypeObj[fieldType] )
                 .success(function(fields) {
                     deferred.resolve(fields);
                 })

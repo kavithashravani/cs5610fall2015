@@ -11,13 +11,14 @@
         function register() {
             registerModel.curUser = {username: registerModel.username, password: registerModel.password, email: registerModel.email};
             UserService.createUser(registerModel.curUser)
-                .then(function(Users) {
-                    for(var i = 0; i < Users.length; i++) {
-                        if(registerModel.curUser.username == Users[i].username) {
-                            $rootScope.currentUser = Users[i];
-                        }
+                .then(function(user) {
+                    if(registerModel.curUser.username == user.username) {
+                        $rootScope.currentUser = user;
+                        $location.url("/profile");
                     }
-                    $location.url("/profile");
+                    else {
+                        console.log("Registration failed");
+                    }
             });
         }
     }

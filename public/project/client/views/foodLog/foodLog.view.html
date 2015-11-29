@@ -14,6 +14,18 @@
                             </div>
                             <div class="panel-body">
                                 Breakfast content
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th>FoodName</th>
+                                        <th>Servings</th>
+                                        <th>Calories</th>
+                                    </tr>
+                                    <tr ng-repeat="breakfastItem in foodLogModel.breakfast">
+                                        <td>{{breakfastItem.foodName}}</td>
+                                        <td>{{breakfastItem.Servings}}</td>
+                                        <td>{{breakfastItem.calories}}</td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                         <div class="panel panel-default">
@@ -21,7 +33,19 @@
                                 <h3 class="panel-title">Lunch</h3>
                             </div>
                             <div class="panel-body">
-                                Lunch content
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th>FoodName</th>
+                                        <th>Servings</th>
+                                        <th>Calories</th>
+                                    </tr>
+                                    <tr ng-repeat="lunchItem in foodLogModel.lunch">
+                                        <td>{{lunchItem.foodName}}</td>
+                                        <td>{{lunchItem.Servings}}</td>
+                                        <td>{{lunchItem.calories}}</td>
+                                    </tr>
+                                </table>
+
                             </div>
                         </div>
                         <div class="panel panel-default">
@@ -30,6 +54,18 @@
                             </div>
                             <div class="panel-body">
                                 Dinner content
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th>FoodName</th>
+                                        <th>Servings</th>
+                                        <th>Calories</th>
+                                    </tr>
+                                    <tr ng-repeat="dinnerItem in foodLogModel.dinner">
+                                        <td>{{dinnerItem.foodName}}</td>
+                                        <td>{{dinnerItem.Servings}}</td>
+                                        <td>{{dinnerItem.calories}}</td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                         <div class="panel panel-default">
@@ -38,6 +74,18 @@
                             </div>
                             <div class="panel-body">
                                 Snacks content
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th>FoodName</th>
+                                        <th>Servings</th>
+                                        <th>Calories</th>
+                                    </tr>
+                                    <tr ng-repeat="snackItem in foodLogModel.snack">
+                                        <td>{{snackItem.foodName}}</td>
+                                        <td>{{snackItem.Servings}}</td>
+                                        <td>{{snackItem.calories}}</td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div><!-- .col-md-6 close -->

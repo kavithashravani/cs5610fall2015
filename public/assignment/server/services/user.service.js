@@ -1,36 +1,67 @@
 module.exports = function(app, userModel) {
 
-    app.post('/api/assignment/user', function(req, res) {
-            var user = req.body;
-            res.json(userModel.Create(user));
-    });
+    app.post('/api/assignment/user', createUser);
+    app.get("/api/assignment/user", findUser);
+    app.get("/api/assignment/user/:id", findUserById);
+    app.put("/api/assignment/user/:id", updateUser);
+    app.delete("/api/assignment/user/:id", deleteUser);
 
-    app.get("/api/assignment/user", function(req, res) {
+    function createUser(req, res) {
+        var user = req.body;
+        userModel.Create(user)
+            .then(function(user) {
+                res.json(user);
+            });
+    }
+
+    function findUser(req, res) {
             var username = req.query.username;
             var password = req.query.password;
-            var u = req.params["username"];
-            var p = req.params["password"];
+            //var u = req.params["username"];
+            //var p = req.params["password"];
             if(username == "undefined" && password == "undefined") {
-                res.json(userModel.FindAll());
+                userModel.FindAll()
+                    .then(function(users) {
+                        res.json(users);
+                    })
             }
             else if(username != "undefined" && password == "undefined") {
-                res.json(userModel.findUserByUsername(username));
+                userModel.findUserByUsername(username)
+                    .then(function(user) {
+                        res.json(user);
+                    });
             }
             else if(username != "undefined" && password != "undefined") {
-                res.json(userModel.findUserByCredentials(username, password));
+                userModel.findUserByCredentials(username, password)
+                    .then(function(user) {
+                        res.json(user);
+                    });
              }
-    });
+    }
 
-    app.get("/api/assignment/user/:id", function(req, res) {
-            res.json(userModel.FindById(req.params.id));
-    });
+    function findUserById(req, res) {
+        var userId = req.params.id;
+        userModel.FindById(userId)
+            .then(function(user) {
+                res.json(user);
+            });
+    }
 
-    app.put("/api/assignment/user/:id", function(req, res) {
-            res.json(userModel.Update(req.params.id, req.body));
-    });
+    function updateUser(req, res) {
+        var userId = req.params.id;
+        var newUser = req.body;
+        userModel.Update(userId, newUser)
+            .then(function(updatedUser) {
+                res.json(updatedUser);
+            });
+    }
 
-    app.delete("/api/assignment/user/:id", function(req, res) {
-            res.json(userModel.Delete(req.params.id));
-    });
+    function deleteUser(req, res) {
+        var userId = req.params.id;
+        userModel.Delte(userId)
+            .then(function(response) {
+                res.json(response);
+            });
 
-}
+    }
+};

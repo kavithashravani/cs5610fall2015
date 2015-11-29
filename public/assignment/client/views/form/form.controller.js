@@ -11,7 +11,7 @@
         formModel.deleteForm = deleteForm;
         formModel.selectForm = selectForm;
 
-        var curUserId = $rootScope.currentUser.id;
+        var curUserId = $rootScope.currentUser._id;
 
 
             FormService.findAllFormsForUser(curUserId)
@@ -24,13 +24,14 @@
             var form = {title: formModel.form.title};
             FormService.createFormForUser(curUserId, form)
                 .then(function(forms) {
-                    formModel.forms = forms;
+                    console.log(forms);
+                    formModel.forms.push(forms);
                     formModel.form = {};
             });
         }
 
         function deleteForm(index) {
-            FormService.deleteFormById(formModel.forms[index].id)
+            FormService.deleteFormById(formModel.forms[index]._id)
                 .then(function(forms) {
                     formModel.forms = forms;
             });
@@ -39,7 +40,7 @@
         function updateForm() {
             if(formModel.selectedForm) {
                 var newForm = {title: formModel.form.title};
-                FormService.updateFormById(formModel.selectedForm.id, newForm)
+                FormService.updateFormById(formModel.selectedForm._id, newForm)
                     .then(function(updatedForm) {
                        formModel.form = {};
                 });

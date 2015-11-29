@@ -11,13 +11,15 @@
                   templateUrl: "views/search/search.view.html",
                   controller: "SearchController"
             })
-            .when("/food-log",{
+            .when("/food-log/:userName/:date",{
                 templateUrl: "views/foodLog/foodLog.view.html",
-                controller: "FoodLogController"
+                controller: "FoodLogController",
+                controllerAs: "foodLogModel"
             })
-            .when("/food-details",{
+            .when("/food-details/:foodId",{
                 templateUrl: "views/foodDetails/foodDetails.view.html",
-                controller: "FoodDetailsController"
+                controller: "FoodDetailsController",
+                controllerAs: "foodDetailsModel"
             })
             .when("/subscribe", {
                 templateUrl: "views/subscribe/subscribe.view.html",
@@ -33,11 +35,13 @@
             })
             .when("/login", {
                 templateUrl: "views/login/login.view.html",
-                controller: "LoginController"
+                controller: "LoginController",
+                controllerAs: "loginModel"
             })
             .when("/register", {
                 templateUrl: "views/register/register.view.html",
-                controller: "RegisterController"
+                controller: "RegisterController",
+                controllerAs: "registerModel"
             })
             .otherwise({
                 redirectTo: "/home"
