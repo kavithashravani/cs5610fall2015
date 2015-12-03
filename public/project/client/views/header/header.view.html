@@ -33,13 +33,14 @@ header-img start
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right" id="top-nav">
-                                    <li ><a href="#home">Home</a></li>
-                                    <li ><a href="#food-log">Food Log</a></li>
-                                    <li ><a href="#profile">Profile</a></li>
-                                    <li ><a href="#blog">Promotions</a></li>
+                                    <li ><a ng-hide="homeTab" href="#home">Home</a></li>
+                                    <!--ng-href="#foodLog/{{currentUser}}/{{currentDate}}"-->
+                                    <li ><a ng-hide="foodLogTab" ng-click="foodLogClick()" >Food Log</a></li>
+                                    <li ><a ng-hide="profileTab" href="#profile">Profile {{currentUser}} </a></li>
+                                    <!--<li ><a href="#blog">Promotions</a></li>-->
                                     <!--<li ><a href="#price">Graphical Report</a></li>-->
-                                    <li ><a href="#login">Login</a></li>
-                                    <li ><a href="#">Sign out</a></li>
+                                    <li ><a ng-hide="loginTab" href="#login">Login</a></li>
+                                    <li ><a ng-hide="signOutTab" href="#signOut">Sign out</a></li>
                                 </ul>
                             </div><!-- /.navbar-collapse -->
                         </div><!-- /.container-fluid -->

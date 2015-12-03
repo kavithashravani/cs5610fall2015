@@ -85,7 +85,7 @@ a:active {
   bottom: 0;
   width: 140px;
   height: 1px;
-  background: #C8C1B3;
+  /*background: #C8C1B3;*/
   margin-left: -70px;
 }
 /*--
@@ -492,7 +492,7 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 #subscribe {
   padding: 280px 0px;
   text-align: center;
-  background: #FFFFFF/*#F6F6F6 /*url("../images/search-bg.jpg")*/;
+  background: /*#FFFFFF;/*#F6F6F6 */url("../images/search-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -508,8 +508,8 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
   top: 0;
   width: 100%;
   height: 100%;
-  /*background: url("../images/overlay-pattern.png") #000000;*/
-  /*opacity: 0.3;*/
+  background: url("../images/overlay-pattern.png") #000000;
+  opacity: 0.1;
 }
 #subscribe .block h1.heading {
   color: #fff;
@@ -712,8 +712,8 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 }
 
 img {
-  width:170px;
-  height: 170px;;
+  width:150px;
+  height: 150px;;
 }
 
 #image-details {
@@ -819,6 +819,7 @@ time.icon
   overflow: hidden;
 }
 
+
 time.icon *
 {
   display: block;
@@ -853,4 +854,80 @@ time.icon span
   letter-spacing: -0.05em;
   padding-top: 0.8em;
   color: #2f2f2f;
+}
+
+
+/* foodLog css */
+.foodLogBar {
+  /*width: /!*15vw; *!/10vw;*/
+  /*height: /!*26vh; *!/5vw;*/
+  background: #d9edf7;
+  padding: 10px 10px 10px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.panel-default>.panel-heading  {
+  background: #d9edf7;
+  height: 45px;
+}
+
+.foodCategory {
+  font-family: "Times New Roman";
+  font-size: 20px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+/*.table>tbody>tr>td  {*/
+  /*border-bottom: 1px solid #ddd;*/
+  /*border-top: none;*/
+/*}*/
+
+.foodLogFont {
+  font-family: "Times New Roman";
+  font-size: 15px;
+  font-style: oblique;
+  padding-bottom: 10px;
+}
+
+.foodLogDist {
+  font-family: "Times New Roman";
+  font-size: 15px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.glyphicon.glyphicon-remove {
+  font-size: 10px;
+  color: #3364B7;
+  padding-top: 4px;
+}
+
+/* home page content */
+
+.homeContnt {
+  padding-top: 25px;
+  color: #FF2222;
+  font-size: 35px;
+  font-family: serif;
+  font-style: oblique;
+  font-weight: 800;
+  font-variant: small-caps;
+}
+
+#signUpHref {
+  font-size: xx-large;
+  color: #03A9F4;
+  font-family: serif;
+  font-variant: small-caps;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+#signUpHref:hover {
+  color: #23527c;
+  text-decoration: underline;
 }

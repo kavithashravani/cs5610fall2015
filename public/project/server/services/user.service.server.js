@@ -1,23 +1,17 @@
 module.exports = function(app, userModel, passport) {
     app.get("/api/profile/:userName/:password", findUserByUserName);
     app.post("/api/register/user", createUser);
-    app.post("/api/login/user", authPassport, userLogin);
     app.get("/api/loggedin/user", isLoggedIn);
     app.post("/api/logout", userLogOut);
-
-    var mongoose = require('mongoose');
-    var userSchema = require("../models/user.schema.js")(mongoose);
+    app.post("/api/login/user", passport.authenticate('local'), userLogin);
 
     function userLogin(req, res) {
         var user = req.body;
-        userSchema
-            .findOne({UserName: user.userName, Password: user.passport}, function(err, foundUser) {
-                res.json(foundUser);
+        userModel
+            .findUserByUserName(user.UserName, user.Password)
+            .then(function(user) {
+                res.json(user);
             });
-    }
-
-    function authPassport(req, res, next) {
-        passport.authenticate('local')(req, res, next);
     }
 
     function isLoggedIn(req, res) {
@@ -40,7 +34,7 @@ module.exports = function(app, userModel, passport) {
         userModel
             .findUserByUserName(user.UserName, user.Password)
             .then(function(existingUser) {
-                if(existingUser.length != 0) {
+                if(existingUser != null) {
                     res.json(null);
                 }
                 else {

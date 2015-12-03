@@ -1,107 +1,167 @@
-
 <!--
- food-log start
- ============================== -->
+about-us start
+============================== -->
 <section id="about-us">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="block">
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Breakfast</h3>
+                <div class="block" >
+                    <div class="col-md-7" style="background: white">
+                        <div class="row">
+                            <div>&nbsp &nbsp</div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-default">
+                                        <div class="foodLogData panel-heading">
+                                            <ul class="list-inline">
+                                                <li class="col-md-7 col-sm-7 col-xs-7 panel-title text-left foodCategory">Breakfast</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist"></li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Fat</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Carbs</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Prot</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Cals</li>
+                                            </ul>
+                                        </div>
+                                        <div class="panel-body">
+                                            <ul class="list-inline" ng-repeat="breakfastItem in foodLogModel.breakfast">
+                                                <a href="#/food-details/{{breakfastItem.foodApi_ID}}">
+                                                    <li class="col-md-7 col-sm-7 col-xs-7 panel-title text-left foodLogFont">{{breakfastItem.foodName}}</li>
+                                                </a>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right">
+                                                    <span ng-click= "foodLogModel.deleteItem(breakfastItem._id, breakfastItem.UserName, breakfastItem.Date)" class="glyphicon glyphicon-remove" role="button"></span>
+                                                </li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{breakfastItem.fat}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{breakfastItem.carbohydrate}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{breakfastItem.protein}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{breakfastItem.calories}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <ul class="list-inline">
+                                                <li class="col-md-7 col-sm-7 col-xs-7 panel-title text-left foodCategory">Lunch</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right"></li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Fat</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Carbs</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Prot</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Cals</li>
+                                            </ul>
+                                        </div>
+                                        <div class="panel-body">
+                                            <ul class="list-inline" ng-repeat="lunchItem in foodLogModel.lunch">
+                                                <a href="#/food-details/{{lunchItem.foodApi_ID}}">
+                                                    <li class="col-md-7 col-sm-7 col-xs-7 panel-title text-left foodLogFont">{{lunchItem.foodName}}</li>
+                                                </a>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right">
+                                                    <span ng-click= "foodLogModel.deleteItem(lunchItem._id, lunchItem.UserName, lunchItem.Date)" class="glyphicon glyphicon-remove" role="button"></span>
+                                                </li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{lunchItem.fat}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{lunchItem.carbohydrate}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{lunchItem.protein}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{lunchItem.calories}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <ul class="list-inline">
+                                                <li class="col-md-7 col-sm-7 col-xs-7 panel-title text-left foodCategory">Snack</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist"></li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Fat</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Carbs</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Prot</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Cals</li>
+                                            </ul>
+                                        </div>
+                                        <div class="panel-body">
+                                            <ul class="list-inline" ng-repeat="snackItem in foodLogModel.snack">
+                                                <a href="#/food-details/{{snackItem.foodApi_ID}}">
+                                                    <li class="col-md-7 col-sm-7 col-xs-7 panel-title text-left foodLogFont">{{snackItem.foodName}}</li>
+                                                </a>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right">
+                                                    <span ng-click= "foodLogModel.deleteItem(snackItem._id, snackItem.UserName, snackItem.Date)" class="glyphicon glyphicon-remove" role="button"></span>
+                                                </li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{snackItem.fat}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{snackItem.carbohydrate}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{snackItem.protein}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{snackItem.calories}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <ul class="list-inline">
+                                                <li class="col-md-7 col-sm-7 col-xs-7 panel-title text-left foodCategory">Dinner</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist"></li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Fat</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Carbs</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Prot</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogDist">Cals</li>
+                                            </ul>
+                                        </div>
+                                        <div class="panel-body">
+                                            <ul class="list-inline" ng-repeat="dinnerItem in foodLogModel.dinner">
+                                                <a href="#/food-details/{{dinnerItem.foodApi_ID}}">
+                                                    <li class="col-md-7 col-sm-7 col-xs-7 panel-title text-left foodLogFont">{{dinnerItem.foodName}}</li>
+                                                </a>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right">
+                                                    <span ng-click= "foodLogModel.deleteItem(dinnerItem._id, dinnerItem.UserName, dinnerItem.Date)" class="glyphicon glyphicon-remove" role="button"></span>
+                                                </li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{dinnerItem.fat}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{dinnerItem.carbohydrate}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{dinnerItem.protein}}</li>
+                                                <li class="col-md-1 col-sm-1 col-xs-1 panel-title text-right foodLogFont">{{dinnerItem.calories}}</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                        </div> <!-- .row close -->
+                    </div><!-- .col-md-6 close -->
+                    <div class="log-calories col-md-5">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputDate" class="col-sm-2 control-label">Date:</label>
+                                <div class="col-sm-10">
+                                    <input ng-model="foodLogModel.selectDate" ng-change="foodLogModel.retrieveLog()" type="date" class="form-control" id="inputDate" placeholder="date">
+                                </div>
                             </div>
-                            <div class="panel-body">
-                                Breakfast content
-                                <table class="table table-striped">
-                                    <tr>
-                                        <th>FoodName</th>
-                                        <th>Servings</th>
-                                        <th>Calories</th>
-                                    </tr>
-                                    <tr ng-repeat="breakfastItem in foodLogModel.breakfast">
-                                        <td>{{breakfastItem.foodName}}</td>
-                                        <td>{{breakfastItem.Servings}}</td>
-                                        <td>{{breakfastItem.calories}}</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Lunch</h3>
-                            </div>
-                            <div class="panel-body">
-                                <table class="table table-striped">
-                                    <tr>
-                                        <th>FoodName</th>
-                                        <th>Servings</th>
-                                        <th>Calories</th>
-                                    </tr>
-                                    <tr ng-repeat="lunchItem in foodLogModel.lunch">
-                                        <td>{{lunchItem.foodName}}</td>
-                                        <td>{{lunchItem.Servings}}</td>
-                                        <td>{{lunchItem.calories}}</td>
-                                    </tr>
-                                </table>
+                            <div class="col-md-12 "style="background: white">
+                                <div class="container-fluid">
+                                    summary
+                                    Total: calories
+                                    Fat %
+                                    Carb %
+                                    Prot %
+                                    Targeted calories:
+                                </div>
 
                             </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Dinner</h3>
+                            <div class="col-md-12" style="background: white">
+                                <div ng-controller="PieChartController">
+                                    <h1>google pie charts</h1>
+                                    <div google-chart chart="chart"> </div>
+                                </div>
                             </div>
-                            <div class="panel-body">
-                                Dinner content
-                                <table class="table table-striped">
-                                    <tr>
-                                        <th>FoodName</th>
-                                        <th>Servings</th>
-                                        <th>Calories</th>
-                                    </tr>
-                                    <tr ng-repeat="dinnerItem in foodLogModel.dinner">
-                                        <td>{{dinnerItem.foodName}}</td>
-                                        <td>{{dinnerItem.Servings}}</td>
-                                        <td>{{dinnerItem.calories}}</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Snacks</h3>
-                            </div>
-                            <div class="panel-body">
-                                Snacks content
-                                <table class="table table-striped">
-                                    <tr>
-                                        <th>FoodName</th>
-                                        <th>Servings</th>
-                                        <th>Calories</th>
-                                    </tr>
-                                    <tr ng-repeat="snackItem in foodLogModel.snack">
-                                        <td>{{snackItem.foodName}}</td>
-                                        <td>{{snackItem.Servings}}</td>
-                                        <td>{{snackItem.calories}}</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div><!-- .col-md-6 close -->
-                    <div class="col-md-6">
-                        <input type="date">
-                        <time datetime="2014-09-20" class="icon">
-                            <em>Saturday</em>
-                            <strong>September</strong>
-                            <span>20</span>
-                        </time>
-                        </button>
-                    </div>
-                    <div>&nbsp;</div>
-                </div>
-               </div><!-- .col-md-12 close -->
-            <a class="form-control btn btn-primary wow bounceIn" data-wow-duration="500ms" data-wow-delay="1300ms" href="#home">Add more Items</a>
+                        </form>
+                    </div><!-- .col-md-5 close -->
+                    <div>&nbsp</div>
+                    <div>&nbsp&nbsp&nbsp</div>
+                </div><!-- .block close -->
+            </div><!-- .col-md-12 close -->
+            <div>&nbsp</div><div>&nbsp</div>
+            <div class="col-md-7">
+            </div>
+            <div class="col-md-5">
+                <a class="form-control btn btn-primary wow bounceIn" data-wow-duration="500ms" data-wow-delay="1300ms" href="#home">Add more Items</a>
+            </div>
+
         </div><!-- .row close -->
     </div><!-- .containe close -->
 </section><!-- #call-to-action close -->

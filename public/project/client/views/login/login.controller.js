@@ -11,7 +11,7 @@
 
         function login() {
             var user = {
-                UserName: loginModel.userName,
+                UserName: loginModel.username,
                 Password: loginModel.password
             }
             UserService

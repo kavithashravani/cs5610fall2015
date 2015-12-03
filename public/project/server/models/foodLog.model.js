@@ -1,6 +1,6 @@
 var q = require("q");
 
-module.exports = function(mongoose, db) {
+module.exports = function(app, mongoose, db) {
     var FoodLogSchema = require("./foodLog.schema.js")(mongoose);
     var foodLogModel = mongoose.model("FoodLogModel", FoodLogSchema);
     var api = {
@@ -55,17 +55,25 @@ module.exports = function(mongoose, db) {
         return deferred.promise;
     }
 
-    function deleteFoodLog(id) {
+    function deleteFoodLog(id, userName, _date) {
         var deferred = q.defer();
 
-        foodLogModel.remove({food_ID: id}, function(err, status) {
+        foodLogModel.remove({_id: id}, function(err, status) {
             if(err) {
                 deferred.reject(err);
             }
             else {
-                deferred.resolve(foodLogs);
+                foodLogModel
+                    .find({UserName: userName, Date: _date}, function(err, foodLogs) {
+                        if(err) {
+                            deferred.reject(err);
+                        }
+                        else {
+                            deferred.resolve(foodLogs);
+                        }
+                    });
             }
         });
         return deferred.promise;
     }
-}
+};

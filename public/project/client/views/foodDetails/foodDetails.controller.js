@@ -3,7 +3,7 @@
         .module("DietTrackerApp")
         .controller("FoodDetailsController", FoodDetailsController);
 
-    function FoodDetailsController($rootScope, $routeParams, $location, FoodDetailsService) {
+    function FoodDetailsController($rootScope, $routeParams, $location, FoodDetailsService, $filter) {
         var foodDetailsModel = this;
         var foodId = $routeParams["foodId"];
         foodDetailsModel.logFood = logFood;
@@ -18,17 +18,20 @@
         function logFood() {
 
             var foodLog = {
-                food_ID: null,
                 foodApi_ID: foodId,
-                UserName: "abc",
+                UserName: $rootScope.currentUser.UserName,
                 Servings: foodDetailsModel.serving,
                 foodType: foodDetailsModel.foodType,
                 foodName: foodDetailsModel.details.recipe_name,
-                calories: parseInt(foodDetailsModel.details.serving_sizes.serving.calories) * parseInt(foodDetailsModel.serving),
-                Date: foodDetailsModel.logDate
+                calories: (parseFloat(foodDetailsModel.details.serving_sizes.serving.calories) * parseFloat(foodDetailsModel.serving)).toString(),
+                fat:    (parseFloat(foodDetailsModel.details.serving_sizes.serving.fat) * parseFloat(foodDetailsModel.serving)).toString(),
+                carbohydrate: (parseFloat(foodDetailsModel.details.serving_sizes.serving.carbohydrate) * parseFloat(foodDetailsModel.serving)).toString(),
+                protein: (parseFloat(foodDetailsModel.details.serving_sizes.serving.protein) * parseFloat(foodDetailsModel.serving)).toString(),
+                Date: $filter('date')(foodDetailsModel.logDate, "yyyy-MM-dd")
             }
             $rootScope.currentFoodLog = foodLog;
-            $location.url("/food-log/"+"abc"+"/"+foodDetailsModel.logDate);
+            $location.url("/food-log/"+$rootScope.currentUser.UserName);
+            //"/"+$filter('date')(foodDetailsModel.logDate, "yyyy-MM-dd")
         }
 
     }

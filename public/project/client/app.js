@@ -1,4 +1,7 @@
 (function(){
     angular
-        .module("DietTrackerApp", ["ngRoute"]);
+        .module("DietTrackerApp", [
+            "ngRoute",
+            "googlechart"
+        ]);
 })();

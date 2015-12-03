@@ -9,7 +9,7 @@ module.exports = function(mongoose) {
         Age: Number,
         Weight: Number,
         Password: String
-    }, {collection: "mongodb.DietTracker.user"});
+    }, {collection: "cs5610.DietTracker.user"});
 
     return userSchema;
 };

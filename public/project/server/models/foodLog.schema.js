@@ -2,15 +2,17 @@
 module.exports = function(mongoose) {
 
     var foodLogSchema = mongoose.Schema({
-        food_ID: String,
         foodApi_ID: String,
         foodType: String,
         foodName: String,
-        calories: Number,
-        UserName: String,
+        calories: String,
+        fat:    String,
+        carbohydrate: String,
+        protein: String,
         Servings: String,
-        Date: Date
-    }, {collection: "mongodb.DietTracker"});
+        Date: Date,
+        UserName: String
+    }, {collection: "mongodb.DietTracker.foodLog"});
 
     return foodLogSchema;
 };

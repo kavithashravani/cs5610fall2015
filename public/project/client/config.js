@@ -6,12 +6,10 @@
     function Configure($routeProvider) {
         $routeProvider
             .when("/home",{
-//                templateUrl: "views/slider/slider.view.html",
-//                controller: "SliderController"
                   templateUrl: "views/search/search.view.html",
                   controller: "SearchController"
             })
-            .when("/food-log/:userName/:date",{
+            .when("/food-log/:userName",{
                 templateUrl: "views/foodLog/foodLog.view.html",
                 controller: "FoodLogController",
                 controllerAs: "foodLogModel"

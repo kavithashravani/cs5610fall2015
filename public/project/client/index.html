@@ -23,7 +23,6 @@
     <!-- Responsive Stylesheet -->
     <link rel="stylesheet" href="css/responsive.css">
 
-
     <!-- Js -->
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
@@ -65,9 +64,16 @@
     <script src="services/foodLog.service.js"></script>
     <script src="services/user.service.js"></script>
 
+    <!--google charts for angular app-->
+    <script src ="views/foodLog/ng-google-chart.js"></script>
+
+
+
 </head>
 <body>
 <section ng-controller="HeaderController" ng-include="'views/header/header.view.html'"></section>
-<div ng-view></div>
+<div ng-view>
+</div>
+
 </body>
 </html>

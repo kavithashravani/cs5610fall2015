@@ -1,6 +1,6 @@
 var q = require("q");
 
-module.exports = function(mongoose) {
+module.exports = function(app, mongoose, db) {
     var UserSchema = require("./user.schema.js")(mongoose);
     var userModel = mongoose.model("_UserModel", UserSchema);
     var api = {
@@ -27,7 +27,7 @@ module.exports = function(mongoose) {
     function findUserByUserName(username, password) {
         var deferred = q.defer();
 
-        userModel.find({UserName: username, Password: password}, function(err, user) {
+        userModel.findOne({UserName: username, Password: password}, function(err, user) {
             if(err) {
                 deferred.reject(err);
             }
