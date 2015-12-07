@@ -2,6 +2,7 @@
     angular
         .module("DietTrackerApp", [
             "ngRoute",
-            "googlechart"
+            "googlechart",
+            "ngDialog"
         ]);
 })();

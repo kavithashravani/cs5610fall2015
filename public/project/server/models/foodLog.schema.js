@@ -12,7 +12,7 @@ module.exports = function(mongoose) {
         Servings: String,
         Date: Date,
         UserName: String
-    }, {collection: "mongodb.DietTracker.foodLog"});
+    }, {collection: "cs5610.DietTracker.foodLog"});
 
     return foodLogSchema;
 };

@@ -6,40 +6,34 @@
     function HeaderController($scope, $location, $rootScope, $http, $filter) {
         //$scope.currentDate = new Date();
         $scope.$location = $location;
+        $rootScope.homeTab = $scope.homeTab;
+        $rootScope.profileTab = $scope.profileTab;
+        $rootScope.foodLogTab = $scope.foodLogTab;
+        $rootScope.signOutTab = $scope.signOutTab ;
+        $rootScope.loginTab = $scope.loginTab;
+
         $http.get("/api/loggedin/user")
             .success(function(user) {
                 if(user != '0') {
-
-                    //$scope.currentDate = $filter('date')(new Date(), "yyyy-MM-dd");
                     $rootScope.currentUser = user;
-                    $scope.currentUser = user.UserName;
-                    $scope.homeTab = false;
-                    $scope.profileTab = false;
-                    $scope.foodLogTab = false;
-                    $scope.signOutTab = false;
-                    $scope.loginTab = true;
-                    $scope.foodLogClick = foodLogClick;
+                    $scope.currentUserName = user.UserName;
+                    $rootScope.homeTab = false;
+                    $rootScope.profileTab = false;
+                    $rootScope.foodLogTab = false;
+                    $rootScope.signOutTab = false;
+                    $rootScope.loginTab = true;
+                    //$scope.foodLogClick = foodLogClick;
 
-                    function foodLogClick() {
-                        $location.url("/food-log/"+user.UserName);
-                    }
-                    //$("#homeTab").show();
-                    //$("#profileTab").show();
-                    //$("#foodLogTab").show();
-                    //$("#signOutTab").show();
-                    //$("#loginTab").hide();
+                    //function foodLogClick() {
+                    //    $location.url("/food-log/"+user.UserName);
+                    //}
                 }
                 else {
-                    $scope.homeTab = false;
-                    $scope.profileTab = true;
-                    $scope.foodLogTab = true;
-                    $scope.signOutTab = true;
-                    $scope.loginTab = false;
-                    //$("#homeTab").show();
-                    //$("#loginTab").show();
-                    //$("#profileTab").hide();
-                    //$("#foodLogTab").hide();
-                    //$("#signOutTab").hide();
+                    $rootScope.homeTab = false;
+                    $rootScope.profileTab = true;
+                    $rootScope.foodLogTab = true;
+                    $rootScope.signOutTab = true;
+                    $rootScope.loginTab = false;
                 }
             });
 

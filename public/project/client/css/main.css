@@ -869,6 +869,10 @@ time.icon span
   margin-right: 10px;
 }
 
+.whiteBg {
+  background: white;
+}
+
 .panel-default>.panel-heading  {
   background: #d9edf7;
   height: 45px;
@@ -930,4 +934,86 @@ time.icon span
 #signUpHref:hover {
   color: #23527c;
   text-decoration: underline;
+}
+
+.userComment {
+  /*margin-left: 20px;*/
+  font-size: 17px;
+  color: #00BCD4;
+  font-family: serif;
+}
+
+.commentContent {
+  font-size: 15px;
+  font-family: serif;
+}
+
+.commentMsg {
+  color: red;
+  font-family: serif;
+}
+
+.commentDelete {
+  padding-left: 60px;
+  font-size: 11px;
+}
+
+.commentDate {
+  font-size: 10px;
+  color: grey;
+}
+
+.commentSection {
+  background-color:#d9edf7;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px
+}
+
+/* profile page styling */
+
+.profileDetails {
+  font-size: 25px;
+  font-family: serif;
+  text-align: left;
+  margin-left:20px;
+  margin-top: 20px;
+  margin-botton:20px;
+  font-style: oblique;
+}
+
+.profileDetails li span{
+  color: #0066FF;
+}
+
+.profileDetailsRow {
+  background-color: white;
+  margin: auto;
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.activityStyle {
+  font-size: 20px;
+  font-style: oblique;
+  color: #FF3B00;
+}
+
+.following {
+  font-size: 25px;
+  font-family: serif;
+  font-weight: 600;
+}
+
+.selfActivity {
+  font-size: 20px;
+  font-family: serif;
+  font-style: oblique;
+  text-align: left;
+}
+
+.orangeText {
+  color: #FF4F02;
 }

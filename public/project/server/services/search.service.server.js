@@ -3,6 +3,7 @@ module.exports = function(app, searchModel) {
 
    function findItems(req, res) {
         var searchItem = req.params["item"];
+       //searchItem = searchItem.replace(/\s+/g, '%20');
        searchModel
             .findItems(searchItem)
             .then(function(searchResults) {

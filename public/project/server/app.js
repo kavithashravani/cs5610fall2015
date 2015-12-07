@@ -14,4 +14,7 @@ module.exports = function(app, mongoose, db, passport){
     var userModel = require("./models/user.model.js")(app, mongoose, db);
     var userService = require("./services/user.service.server.js")(app, userModel, passport);
 
+    var commentModel = require("./models/comment.model.js")(app, mongoose, db);
+    var commentService = require("./services/comment.service.server.js")(app, commentModel);
+
 };

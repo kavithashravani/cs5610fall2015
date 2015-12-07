@@ -8,7 +8,8 @@ module.exports = function(mongoose) {
         Email: String,
         Age: Number,
         Weight: Number,
-        Password: String
+        Password: String,
+        follows: [String]
     }, {collection: "cs5610.DietTracker.user"});
 
     return userSchema;

@@ -35,11 +35,11 @@ header-img start
                                 <ul class="nav navbar-nav navbar-right" id="top-nav">
                                     <li ><a ng-hide="homeTab" href="#home">Home</a></li>
                                     <!--ng-href="#foodLog/{{currentUser}}/{{currentDate}}"-->
-                                    <li ><a ng-hide="foodLogTab" ng-click="foodLogClick()" >Food Log</a></li>
-                                    <li ><a ng-hide="profileTab" href="#profile">Profile {{currentUser}} </a></li>
+                                    <li ><a ng-hide="foodLogTab" href="#food-log/{{currentUser.UserName}}" >Food Log</a></li>
+                                    <li ><a ng-hide="profileTab" href="#profile/{{currentUser.UserName}}">Profile </a></li>
                                     <!--<li ><a href="#blog">Promotions</a></li>-->
                                     <!--<li ><a href="#price">Graphical Report</a></li>-->
-                                    <li ><a ng-hide="loginTab" href="#login">Login</a></li>
+                                    <li ><a ng-hide="loginTab" ng-href="#login">Login</a></li>
                                     <li ><a ng-hide="signOutTab" href="#signOut">Sign out</a></li>
                                 </ul>
                             </div><!-- /.navbar-collapse -->

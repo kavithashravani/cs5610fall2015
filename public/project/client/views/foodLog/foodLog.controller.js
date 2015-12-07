@@ -4,11 +4,17 @@
         .controller("FoodLogController", FoodLogController)
         .controller("PieChartController", PieChartController);
 
-        function FoodLogController($rootScope, $scope, $routeParams, $filter, FoodLogService) {
+        function FoodLogController($rootScope, $scope, $location, $http, $routeParams, $filter, FoodLogService) {
             var foodLogModel = this;
+            $http.get("/api/loggedin/user")
+                .success(function(user) {
+                    if (user == '0') {
+                        $location.url("/home")
+                    }
+                });
             var insertFoodLogItem = $rootScope.currentFoodLog;
             var userName = $routeParams["userName"];
-            var date = $filter('date')(new Date(), "yyyy-MM-dd");
+            var date = $filter('date')(new Date(), "mediumDate");
             if(insertFoodLogItem != undefined) {
                 date = insertFoodLogItem.Date;
             }
@@ -86,7 +92,7 @@
             }
 
             function retrieveLog() {
-                var selectDate = $filter('date')(foodLogModel.selectDate, "yyyy-MM-dd");
+                var selectDate = $filter('date')(foodLogModel.selectDate, "mediumDate");
                 FoodLogService.findFoodLogByUserName(userName, selectDate)
                     .then(function(foodLogItems) {
                         items = foodLogItems;

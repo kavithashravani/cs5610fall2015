@@ -19,17 +19,10 @@
                 controller: "FoodDetailsController",
                 controllerAs: "foodDetailsModel"
             })
-            .when("/subscribe", {
-                templateUrl: "views/subscribe/subscribe.view.html",
-                controller: "SubscribeController"
-            })
-            .when("/profile", {
+            .when("/profile/:userName", {
                 templateUrl: "views/profile/profile.view.html",
-                controller: "ProfileController"
-            })
-            .when("/blog", {
-                templateUrl: "views/blog/blog.view.html",
-                controller: "BlogController"
+                controller: "ProfileController",
+                controllerAs: "profileModel"
             })
             .when("/login", {
                 templateUrl: "views/login/login.view.html",
@@ -40,6 +33,11 @@
                 templateUrl: "views/register/register.view.html",
                 controller: "RegisterController",
                 controllerAs: "registerModel"
+            })
+            .when("/signOut", {
+                templateUrl: "views/search/search.view.html",
+                controller: "SignOutController",
+                controllerAs: "signOutModel"
             })
             .otherwise({
                 redirectTo: "/home"

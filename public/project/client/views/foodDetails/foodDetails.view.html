@@ -6,7 +6,7 @@ about-us start
         <div class="row">
             <div class="col-md-12">
                 <div class="block" >
-                    <div class="col-md-6" style="background: white">
+                    <div class="col-md-6 whiteBg">
                        <div class="row">
                            <div class="col-md-5 col-xs-5">
                                <img id= "image-details" class="img-responsive"  ng-src="{{foodDetailsModel.details.recipe_images.recipe_image}}">
@@ -94,14 +94,27 @@ about-us start
                 </div><!-- .block close -->
             </div><!-- .col-md-12 close -->
             <div>&nbsp</div><div>&nbsp</div>
-            <div class="col-md-12 panel panel-body panel-info">
-                <div class="col-md-10">
-                    <input type="text" class="form-control" id="comment" placeholder="write a comment">
+
+<!--Comments section begin-->
+            <div ng-show="foodDetailsModel.commentPanelTab" class="col-md-12 panel panel-body panel-info">
+                        <div ng-repeat="eachComment in foodDetailsModel.allComments" class="commentSection col-md-8">
+                            <a href="#profile/{{eachComment.UserName}}"class="col-md-3 userComment">{{eachComment.UserName}}</a>
+                            <div class="col-md-7 commentContent">{{eachComment.Comment}}</div>
+                            <div class="col-md-2 commentDate">{{eachComment.CommentDate | date: "mediumDate"}}</div>
+                            <br><a class="commentDelete pull-right" role="button" ng-show="eachComment.UserName == foodDetailsModel.currentUser.UserName" ng-click="foodDetailsModel.deleteComment(eachComment._id)">delete</a>
+                        </div>
+                <form name="commentForm">
+                <div class="col-md-8">
+                    <input name="inputComment" ng-model="foodDetailsModel.inputComment" type="text" class="form-control" id="comment" placeholder="write a comment">
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <a class="btn btn-primary wow bounceIn"  ng-click="foodDetailsModel.comment()" role="button">comment</a>
                 </div>
-            </div>
+                <div class="col-md-3">
+                    <span class="commentMsg" ng-hide="commentForm.inputComment.$error.pattern">{{commentForm.inputComment.$error.pattern}}</span>
+                </div>
+                </form>
+            </div> <!-- comment section close -->
         </div><!-- .row close -->
     </div><!-- .containe close -->
 </section><!-- #call-to-action close -->

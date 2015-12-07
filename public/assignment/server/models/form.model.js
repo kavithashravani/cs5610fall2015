@@ -150,7 +150,7 @@ module.exports = function(app, mongoose, db) {
     function deleteField(formId, fieldId) {
         var deferred = q.defer();
         FormModel.findOne({_id: formId}, function(err, form) {
-            console.log("Delete *** " + form.fields);;
+            console.log("Delete *** " + form.fields);
             var fields = form.fields;
             var fieldIndex;
             for(var i = 0; i < fields.length; i++) {

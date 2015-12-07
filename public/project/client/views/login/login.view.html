@@ -8,10 +8,10 @@
                 <div class="block">
                     <!--<h1 class="heading wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">our <span>CONTACT US</span></h1>-->
                     <h3 class="title wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">Login to <span>Diet Tracker</span> </h3>
-                    <form>
+                    <form name="loginForm">
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">
                             <label for="userName" class="control-label">User Name</label>
-                            <input ng-model="loginModel.username" type="text" class="form-control" id="userName" placeholder="User Name">
+                            <input name="userName" ng-model="loginModel.username" ng-pattern= "/^[a-zA-Z0-9]*$/" type="text" class="form-control" id="userName" placeholder="User Name">
                         </div>
                         <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1000ms">
                             <label for="password" class="control-label">Password</label>
