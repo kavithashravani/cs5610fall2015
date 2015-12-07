@@ -21,6 +21,9 @@
             $http.post("/api/login/user", user)
                 .success(function(response) {
                     deferred.resolve(response);
+                })
+                .error(function(response) {
+                    deferred.resolve("UnAuthorized");
                 });
             return deferred.promise;
         }

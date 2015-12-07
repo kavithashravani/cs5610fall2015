@@ -1017,3 +1017,7 @@ time.icon span
 .orangeText {
   color: #FF4F02;
 }
+
+.error {
+  color: red;
+}

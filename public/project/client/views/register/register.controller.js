@@ -4,7 +4,7 @@
         .module("DietTrackerApp")
         .controller("RegisterController", RegisterController);
 
-    function RegisterController($scope, $rootScope, $location, UserService) {
+    function RegisterController($scope, $rootScope, ngDialog, $location, UserService) {
        var registerModel = this;
         //registerModel.$location = $location;
         registerModel.register = register;
@@ -29,6 +29,10 @@
                     }
                     else {
                         registerModel.message = "user already exists";
+                        var registrationErrorDialog = ngDialog.open({
+                            template: "./views/register/registrationFailedAlertDialog.view.html",
+                            className: 'ngdialog-theme-default',
+                        });
                     }
                 });
         }

@@ -29,6 +29,7 @@
                         .then(function(foodLogItem) {
                             items.push(foodLogItem);
                             foodLogModel.logs = foodLogItem;
+                            $rootScope.currentFoodLog = undefined;
                             console.log(foodLogItem);
                         });
                 }
