@@ -56,17 +56,22 @@ about-us start
                     </div><!-- .col-md-6 close -->
                     <div class="log-calories col-md-6">
                         <form class="form-horizontal" name="logFoodForm">
+                            <!--<div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">-->
+                                <!--<label for="inputDate" class="control-label">Date</label>-->
+                                <!--<input name="inputDate" ng-model="foodDetailsModel.logDate" type="date" class="form-control" id="inputDate" placeholder="date" required>-->
+                                <!--<span class="error" ng-show="logFoodForm.inputDate.$error.required">choose a date</span>-->
+                            <!--</div>-->
                             <div class="form-group">
                                 <label for="inputDate" class="col-sm-2 control-label">Date:</label>
-                                <div class="col-sm-10">
-                                    <input name="inputDate" ng-model="foodDetailsModel.logDate" type="date" class="form-control" id="inputDate" placeholder="date" required>
+                                <div class="col-sm-8">
+                                    <input name="inputDate" ng-model="foodDetailsModel.logDate" type="date" class="form-control logFieldWd" id="inputDate" placeholder="date" required>
                                     <span class="error" ng-show="logFoodForm.inputDate.$error.required">choose a date</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="mealType" class="col-sm-2 control-label">meal:</label>
-                                <div class="col-sm-10">
-                                    <select name="category" ng-model="foodDetailsModel.foodType" class = "form-control" id ="mealType" required>
+                                <div class="col-sm-8">
+                                    <select name="category" ng-model="foodDetailsModel.foodType" class = "form-control logFieldWd" id ="mealType" required>
                                         <option value="breakfast">Breakfast</option>
                                         <option value="lunch">Lunch</option>
                                         <option value="dinner">Dinner</option>
@@ -77,16 +82,18 @@ about-us start
                             </div>
                             <div class="form-group">
                                 <label for="quantity" class="col-sm-2 control-label">Amount:</label>
-                                <div class="input-group">
-                                    <input name="amount" ng-model="foodDetailsModel.serving" type="text" ng-pattern="/^[0-9]*$/" required class="form-control" id="quantity">
-                                    <div class="input-group-addon">serving(s)</div>
+                                <div class="col-sm-8 input-group">
+                                    <input style="margin-left: 14px" name="amount" ng-model="foodDetailsModel.serving" type="text" ng-pattern="/^[0-9]*$/" required class="form-control" id="quantity">
+                                    <div class="input-group-addon" style="padding-left:30px">serving(s)</div>
                                 </div>
                                 <span class="error" ng-show="logFoodForm.amount.$error.required">Required field</span>
                                 <span class="error" ng-show="logFoodForm.amount.$error.pattern">enter only numbers</span>
+
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <button ng-disabled="logFoodForm.$invalid" ng-click="logFoodForm.$invalid || foodDetailsModel.logFood()" class="btn-success btn btn-default">Add</button>
+                                <label for="quantity" class="col-sm-2 control-label"></label>
+                                <div class="col-sm-8">
+                                    <button ng-disabled="logFoodForm.$invalid" ng-click="logFoodForm.$invalid || foodDetailsModel.logFood()" class="btn-success btn btn-default logFieldWd">Add</button>
                                 </div>
                             </div>
                         </form>
@@ -99,23 +106,24 @@ about-us start
 
 <!--Comments section begin-->
             <div ng-show="foodDetailsModel.commentPanelTab" class="col-md-12 panel panel-body panel-info">
-                        <div ng-repeat="eachComment in foodDetailsModel.allComments" class="commentSection col-md-8">
-                            <a href="#profile/{{eachComment.UserName}}"class="col-md-3 userComment">{{eachComment.UserName}}</a>
-                            <div class="col-md-7 commentContent">{{eachComment.Comment}}</div>
-                            <div class="col-md-2 commentDate">{{eachComment.CommentDate | date: "mediumDate"}}</div>
-                            <br><a class="commentDelete pull-right" role="button" ng-show="eachComment.UserName == foodDetailsModel.currentUser.UserName" ng-click="foodDetailsModel.deleteComment(eachComment._id)">delete</a>
+                        <div ng-repeat="eachComment in foodDetailsModel.allComments" class="commentSection col-md-10 col-sm-10 col-xs-10">
+                            <a href="#profile/{{eachComment.UserName}}"class="col-md-3 col-sm-3 col-xs-3 userComment">{{eachComment.UserName}}</a>
+                            <div class="col-md-6 col-sm-6 col-xs-6 commentContent">{{eachComment.Comment}}</div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 commentDate">{{eachComment.CommentDate | date: "mediumDate"}}</div>
+                            <div class="col-md-1 col-sm-1 col-xs-1"><a class="commentDelete btn"  role="button" ng-show="eachComment.UserName == foodDetailsModel.currentUser.UserName" ng-click="foodDetailsModel.deleteComment(eachComment._id)">
+                            <span class="glyphicon glyphicon-remove-sign"></span></a></div>
                         </div>
-                <form name="commentForm">
-                <div class="col-md-8">
-                    <input name="inputComment" ng-model="foodDetailsModel.inputComment" type="text" class="form-control" id="comment" placeholder="write a comment">
+                <div class="col-md-10 col-sm10 col-xs-10">
+                    <form name="commentForm">
+                        <div class="col-md-8">
+                            <textarea rows="2" cols="55" name="inputComment" ng-model="foodDetailsModel.inputComment" type="text" class="form-control" id="comment" placeholder="write a comment">
+                            </textarea>
+                        </div>
+                        <div class="col-md-2">
+                            <a class="btn btn-primary wow bounceIn commentBtn"  ng-click="foodDetailsModel.comment()" role="button">comment</a>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-md-1">
-                    <a class="btn btn-primary wow bounceIn"  ng-click="foodDetailsModel.comment()" role="button">comment</a>
-                </div>
-                <div class="col-md-3">
-                    <span class="commentMsg" ng-hide="commentForm.inputComment.$error.pattern">{{commentForm.inputComment.$error.pattern}}</span>
-                </div>
-                </form>
             </div> <!-- comment section close -->
         </div><!-- .row close -->
     </div><!-- .containe close -->

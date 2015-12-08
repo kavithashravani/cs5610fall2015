@@ -11,6 +11,8 @@ module.exports = function(app) {
 
     function findItems(searchItem) {
 
+
+
         var deferred = q.defer();
 
         // Dependencies and constants

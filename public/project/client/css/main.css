@@ -1,13 +1,13 @@
 /* var text-decoration */
 @font-face {
-  font-family: myfont;
+  font-family: serif/*myfont;*/
   src: url(../fonts/ufonts.com_tw-cen-mt.ttf);
 }
 /*--
     Common Css
 --*/
 body {
-  font-family: myfont;
+  font-family: serif;/*myfont;*/
   font-size: 14px;
   font-weight: 400;
 }
@@ -18,7 +18,7 @@ h4,
 h5,
 h6 {
   margin: 0px;
-  font-family: myfont;
+  font-family: serif;/* myfont;*/
 }
 h1 {
   font-size: 36px;
@@ -36,7 +36,7 @@ p {
   font-weight: 400;
   line-height: 20px;
   margin: 0px;
-  font-family: myfont;
+  font-family: serif;/*myfont;*/
 }
 ul {
   padding: 0;
@@ -725,22 +725,22 @@ img {
 .recipe-name {
   padding-top: 25px;
  /* padding-left: 27px;*/
-  font-family: "Times New Roman";
+  font-family: "serif";
   font-size: 30px;
   font-style: oblique;
   font-weight: bold;
 }
 
 .recipe-description {
-  font-family: "comic sans";
+  font-family: "serif";
   padding-left: 0px;
   font-size: 15px;
   font-style: italic;
 }
 
 .serving {
-  width: /*15vw; */10vw;
-  height: /*26vh; */5vw;
+  /*width: /!*15vw; *!/10vw;*/
+  /*height: /!*26vh; *!/5vw;*/
   background: #d9edf7;
   padding: 12px 0px 11px 0px;
   margin-top: 10px;
@@ -754,13 +754,13 @@ img {
 
 .serving-content {
   font-size: 14px;
-  font-family: "Times New Roman";
+  font-family: "serif";
   padding-left: 9px;
 }
 
 .nutrition-facts {
-  width: 15vw;
-  height: /*56vh;*/12vw;
+  /*width: 15vw;*/
+  /*height: /!*56vh;*!/12vw;*/
   background: #d9edf7;
   padding: 17px 0px 11px 0px;
   margin-top: 10px;
@@ -779,6 +779,8 @@ img {
 
 .log-calories {
   padding-top: 60px;
+  padding-left: 60px;
+  height: 97%;
 }
 
 hr {
@@ -879,7 +881,7 @@ time.icon span
 }
 
 .foodCategory {
-  font-family: "Times New Roman";
+  font-family: "serif";
   font-size: 20px;
   font-style: oblique;
   font-weight: bold;
@@ -891,15 +893,15 @@ time.icon span
 /*}*/
 
 .foodLogFont {
-  font-family: "Times New Roman";
-  font-size: 15px;
+  font-family: "serif";
+  font-size: 11px;
   font-style: oblique;
   padding-bottom: 10px;
 }
 
 .foodLogDist {
-  font-family: "Times New Roman";
-  font-size: 15px;
+  font-family: "serif";
+  font-size: 11px;
   font-style: oblique;
   font-weight: bold;
 }
@@ -948,14 +950,24 @@ time.icon span
   font-family: serif;
 }
 
+.commentBtn {
+  padding: 10px 15px 10px 15px;
+  margin-top: 9px;
+}
+
 .commentMsg {
   color: red;
   font-family: serif;
 }
 
 .commentDelete {
-  padding-left: 60px;
+  padding: 2px;
   font-size: 11px;
+  color:red;
+}
+
+a.commentDelete:hover {
+  color: red;
 }
 
 .commentDate {
@@ -1021,3 +1033,27 @@ time.icon span
 .error {
   color: red;
 }
+
+.chartHeading {
+  font-family: "serif";
+  font-size: 30px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.chartBg {
+  background: #d9edf7;
+  padding-bottom: 25px;
+  margin-top: 25px;
+  padding-top: 6px;
+  margin-bottom: 25px;
+}
+
+.logFieldWd {
+  width: 105%;
+}
+
+.addBtnWd {
+  width: 105%;
+}
+
