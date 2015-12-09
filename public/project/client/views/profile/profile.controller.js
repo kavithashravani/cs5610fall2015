@@ -4,7 +4,6 @@
         .module("DietTrackerApp")
         .controller("ProfileController", ProfileController)
         .controller("EditProfileController", EditProfileController);
-        //.filter("Unique", Unique);
 
     function ProfileController($scope, $routeParams, $filter, $rootScope, $http, $location, ngDialog, UserService, CommentService) {
         var profileModel = this;
@@ -42,7 +41,7 @@
                     }
                     else {
                         profileModel.visitingUser = profileModel.currentUser;
-                       console.log(profileModel.visitingUser.Weight);
+                       //console.log(profileModel.visitingUser.Weight);
                     }
                 }
                 else {
@@ -86,7 +85,7 @@
                     profileModel.currentUser = user;
                     $rootScope.currentUser = user;
                     profileModel.followVariable = "Unfollow"
-                    console.log(user);
+                    //console.log(user);
                 });
 
         }
@@ -98,7 +97,7 @@
                     profileModel.currentUser = user;
                     $rootScope.currentUser = user;
                     profileModel.followVariable = "Follow"
-                    console.log(user);
+                    //console.log(user);
                 });
         }
 

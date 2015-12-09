@@ -9,7 +9,7 @@ module.exports = function(app, searchModel) {
             .then(function(searchResults) {
                 res.json(searchResults);
             });
-        console.log(searchItem);
+        //console.log(searchItem);
 
 
     }

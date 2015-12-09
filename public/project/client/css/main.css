@@ -919,7 +919,7 @@ time.icon span
   color: #FF2222;
   font-size: 35px;
   font-family: serif;
-  font-style: oblique;
+  /*font-style: oblique;*/
   font-weight: 800;
   font-variant: small-caps;
 }
@@ -1075,9 +1075,5 @@ a.commentDelete:hover {
   font-weight: bold;
 }
 
-/*.followingBg {*/
-  /*background: #d9edf7;*/
-  /*height:100% !important;*/
-  /*margin: auto;*/
-/*}*/
+
 

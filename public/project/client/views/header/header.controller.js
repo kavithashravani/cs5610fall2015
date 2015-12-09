@@ -4,7 +4,6 @@
         .controller("HeaderController", HeaderController);
 
     function HeaderController($scope, $location, $rootScope, $http, $filter) {
-        //$scope.currentDate = new Date();
         $scope.$location = $location;
         $rootScope.homeTab = $scope.homeTab;
         $rootScope.profileTab = $scope.profileTab;
@@ -22,11 +21,6 @@
                     $rootScope.foodLogTab = false;
                     $rootScope.signOutTab = false;
                     $rootScope.loginTab = true;
-                    //$scope.foodLogClick = foodLogClick;
-
-                    //function foodLogClick() {
-                    //    $location.url("/food-log/"+user.UserName);
-                    //}
                 }
                 else {
                     $rootScope.homeTab = false;

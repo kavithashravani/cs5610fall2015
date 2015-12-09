@@ -33,7 +33,7 @@
             FoodDetailsService.findDetailsById(foodId)
                 .then(function(details) {
                     foodDetailsModel.details = details.recipe;
-                    console.log(details);
+                    //console.log(details);
                 });
 
         }
@@ -64,9 +64,6 @@
                     }
 
                 });
-
-
-            //"/"+$filter('date')(foodDetailsModel.logDate, "yyyy-MM-dd")
         }
 
         function comment() {
@@ -83,7 +80,7 @@
                     .then(function (comment) {
                         foodDetailsModel.allComments.push(comment);
                         foodDetailsModel.inputComment = "";
-                        console.log(foodDetailsModel.allComments);
+                        //console.log(foodDetailsModel.allComments);
                     });
 
         }

@@ -43,7 +43,7 @@
                         }
                     }
                     $scope.searchResults = chunk(Results, 3);
-                    console.log($scope.searchResults);
+                    //console.log($scope.searchResults);
             });
         }
 

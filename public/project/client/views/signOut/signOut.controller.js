@@ -12,11 +12,6 @@
                 .then(function(response) {
                     if (response == "OK") {
                         $rootScope.currentUser = null;
-                        //$rootScope.homeTab = false;
-                        //$rootScope.profileTab = true;
-                        //$rootScope.foodLogTab = true;
-                        //$rootScope.signOutTab = true;
-                        //$rootScope.loginTab = false;
                         $location.url("/home");
                     }
                 });

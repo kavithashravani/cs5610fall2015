@@ -29,16 +29,17 @@
                     FoodLogService.insertFoodLog(insertFoodLogItem)
                         .then(function(foodLogItem) {
                             items.push(foodLogItem);
-                            foodLogModel.logs = foodLogItem;
+                            foodLogModel.logs = items;
                             $rootScope.currentFoodLog = undefined;
-                            console.log(foodLogItem);
+                            buildCategories();
+                            //console.log(foodLogItem);
                         });
                 }
                 FoodLogService.findFoodLogByUserName(userName, date)
                     .then(function(foodLogItems) {
                         items = foodLogItems;
-                        foodLogModel.logs = foodLogItems
-                        console.log(foodLogItems);
+                        foodLogModel.logs = items
+                        //console.log(foodLogItems);
                         buildCategories();
                     });
 
@@ -49,9 +50,9 @@
                 FoodLogService.deleteFoodLogItem(foodItemId, userName, ItemDate)
                     .then(function(foodLogItem) {
                         foodLogModel.logs = foodLogItem;
-                        console.log("after delete" + foodLogItem);
+                        //console.log("after delete" + foodLogItem);
                         items = foodLogItem;
-                        console.log("after delete items" + items);
+                        //console.log("after delete items" + items);
                         buildCategories();
                     });
             }
@@ -63,7 +64,7 @@
                 var dinner = [];
                 var fat = 0.0, carb = 0.0, prot = 0.0;
                 for(var i = 0; i < items.length; i++) {
-                    console.log(items[i].foodType)
+                    //console.log(items[i].foodType)
                     fat = fat + parseFloat(items[i].fat);
                     carb = carb + parseFloat(items[i].carbohydrate);
                     prot = prot + parseFloat(items[i].protein);
@@ -87,7 +88,7 @@
                 foodLogModel.fat = fat;
                 foodLogModel.carb = carb;
                 foodLogModel.prot = prot;
-                console.log(foodLogModel);
+                //console.log(foodLogModel);
                 $scope.foodLogData = foodLogModel;
                 $scope.$broadcast('changeInfoodLog', $scope.foodLogData);
             }
@@ -98,7 +99,7 @@
                     .then(function(foodLogItems) {
                         items = foodLogItems;
                         foodLogModel.logs = foodLogItems
-                        console.log(foodLogItems);
+                        //console.log(foodLogItems);
                         buildCategories();
                     });
             }

@@ -34,7 +34,7 @@ module.exports = function(app, userModel, passport) {
             .then(function(user) {
                 res.json(user);
             });
-        console.log(user);
+        //console.log(user);
     }
 
     function findUserByUserName(req, res) {
