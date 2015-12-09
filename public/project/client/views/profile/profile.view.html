@@ -3,63 +3,67 @@
  ============================== -->
 <section id="about-us">
     <div class="container">
-        <div class="row">
+        <div class="row whiteBg">
             <div class="col-md-12">
                 <div class="block" >
-                    <!--<img class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms" src="images/cooker-img.png" alt="cooker-img">-->
-                    <!--<h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms" >Your <span>Restaurant’s</span> </br> Website Has To Look <span>Good</span>-->
-                    <!--</h1>-->
-                    <!--<ul class="nav nav-tabs">-->
-                        <!--<li role="presentation" class="active"><a href="#summary">Summary</a></li>-->
-                        <!--<li role="presentation"><a href="#following">Following</a></li>-->
-                    <!--</ul>-->
                         <div class="row profileDetailsRow">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <h1 class="orangeText"> Profile Information</h1>
-                                    <ul class="col-md-12 profileDetails pull-left">
-                                        <li ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName">UserName: <span>{{profileModel.visitingUser.UserName}}</span></li>
-                                        <li>First Name: <span>{{profileModel.visitingUser.FirstName}}</span></li>
-                                        <li>Last Name: <span>{{profileModel.visitingUser.LastName}}</span></li>
-                                        <li>Email: <span>{{profileModel.visitingUser.Email}}</span></li>
-                                        <li >Age: <span>{{profileModel.visitingUser.Age}}</span></li>
-                                        <li ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName">weight: <span>{{profileModel.visitingUser.Weight}}</span></li>
-                                    </ul>
-                                <div class="col-md-12 pull-right">
-                                    <a role="button" ng-show="profileModel.currentUser.UserName != profileModel.visitingUser.UserName"
-                                       ng-click="profileModel.toggleFollow()">{{profileModel.followVariable}}</a>
-                                    <span style="margin-bottom:4px" ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName">
-                                        <a role="button" ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName" ng-click="profileModel.editProfile()">edit profile</a>
-                                        <span>|</span>
-                                        <a role="button" ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName" ng-click="profileModel.changePwd()">change password</a>
-                                    </span>
-                                    <span style="margin-top:4px; margin-bottom: 4px"><hr></span>
-                                </div>
-                            </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h1 class="orangeText"> Profile Information</h1>
+                                        <ul class="col-md-12 profileDetails pull-left">
+                                            <li ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName">
+                                                UserName: <span>{{profileModel.visitingUser.UserName}}</span>
+                                            </li>
+                                            <li>First Name: <span>{{profileModel.visitingUser.FirstName}}</span></li>
+                                            <li>Last Name: <span>{{profileModel.visitingUser.LastName}}</span></li>
+                                            <li>Email: <span>{{profileModel.visitingUser.Email}}</span></li>
+                                            <li ng-show="profileModel.visitingUser.Age != null">
+                                                Age: <span>{{profileModel.visitingUser.Age}} years</span>
+                                            </li>
+                                            <li ng-show="(profileModel.visitingUser.Weight != null) && profileModel.currentUser.UserName == profileModel.visitingUser.UserName">
+                                                weight: <span>{{profileModel.visitingUser.Weight}} lbs</span>
+                                            </li>
+                                        </ul>
+                                    <div class="col-md-12 pull-right">
+                                        <button class="btn btn-info profBtn" ng-show="profileModel.currentUser.UserName != profileModel.visitingUser.UserName"
+                                           ng-click="profileModel.toggleFollow()">
+                                            <span class="profBtnIcon glyphicon glyphicon-user">{{profileModel.followVariable}}</span>
+                                        </button>
+                                        <span ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName">
+                                            <button class="btn btn-primary profBtn" ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName" ng-click="profileModel.editProfile()">
+                                                <span class="profBtnIcon glyphicon glyphicon-edit"><span>edit profile</span></span>
+                                            </button>
+                                            <span>|</span>
+                                            <button  class="btn btn-primary profBtn" ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName" ng-click="profileModel.changePwd()">
+                                                <span class="profBtnIcon glyphicon glyphicon-cog">change password</span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div><!-- end of profile info div -->
 
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="col-md-12">
-                                    <h1 class="orangeText">Recent Activity</h1>
-                                    <ul class="col-md-12 pull-left selfActivity" ng-repeat="activity in profileModel.userActivity">
-                                        <li class="col-md-12">Commented on <a href="#food-details/{{activity.foodApi_ID}}">{{activity.foodName}}</a> on {{activity.CommentDate | date: "mediumDate"}}</li>
-                                    </ul>
+                                <div ng-show="(profileModel.currentUser.UserName != profileModel.visitingUser.UserName) && profileModel.followVariable=='Unfollow' ||
+                                ((profileModel.currentUser.UserName == profileModel.visitingUser.UserName) && profileModel.userActivity!=0)" class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-12">
+                                        <span style="margin-top:4px; margin-bottom: 4px"><br><br><hr></span>
+                                        <h1 class="orangeText">Recent Activity</h1>
+                                        <ul class="col-md-12 selfActivity" ng-repeat="activity in profileModel.userActivity">
+                                            <li class="col-md-12">Commented on <a href="#food-details/{{activity.foodApi_ID}}">{{activity.foodName}}</a> on {{activity.CommentDate | date: "mediumDate"}}</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName" class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="col-md-12">
-                                    <br><br>
-                                    <hr>
-                                    <h1 class="orangeText">List of Users you are following</h1>
-                                    <ul ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName" ng-repeat="user in profileModel.currentUser.follows" class="profileDetails pull-left">
-                                       <li><a class="following" href="#profile/{{user}}">{{user}}</a></li>
-                                        <li class="activityStyle"> &nbsp &nbsp - viewed and commented on following items</li>
-                                    </ul>
+                                <div ng-show="(profileModel.currentUser.UserName == profileModel.visitingUser.UserName) && (profileModel.currentUser.follows != 0)" class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-12 ">
+                                        <br><br>
+                                        <hr>
+                                        <h1 class="orangeText">Following</h1>
+                                        <ul ng-show="profileModel.currentUser.UserName == profileModel.visitingUser.UserName" ng-repeat="user in profileModel.currentUser.follows" class="profileDetailst">
+                                           <li><a class="following" ng-href="#profile/{{user}}">{{user}}</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
+
                         </div>
                 </div>
-                    <!--<p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </br> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </br>voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>-->
-                <!--</div>-->
             </div><!-- .col-md-12 close -->
         </div><!-- .row close -->
     </div><!-- .containe close -->

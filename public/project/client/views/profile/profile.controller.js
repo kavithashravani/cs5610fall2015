@@ -28,10 +28,10 @@
                     $scope.currentUser = $rootScope.currentUser;
                     if(profileModel.visitingUserName != profileModel.currentUser.UserName) {
                         if(profileModel.currentUser.follows.indexOf(profileModel.visitingUserName) == -1) {
-                            profileModel.followVariable = "follow"
+                            profileModel.followVariable = "Follow"
                         }
                         else {
-                            profileModel.followVariable = "unfollow"
+                            profileModel.followVariable = "Unfollow"
                         }
                         UserService
                             .findUserByUserName(profileModel.visitingUserName)
@@ -42,6 +42,7 @@
                     }
                     else {
                         profileModel.visitingUser = profileModel.currentUser;
+                       console.log(profileModel.visitingUser.Weight);
                     }
                 }
                 else {
@@ -84,7 +85,7 @@
                 .then(function(user) {
                     profileModel.currentUser = user;
                     $rootScope.currentUser = user;
-                    profileModel.followVariable = "unfollow"
+                    profileModel.followVariable = "Unfollow"
                     console.log(user);
                 });
 
@@ -96,7 +97,7 @@
                 .then(function(user) {
                     profileModel.currentUser = user;
                     $rootScope.currentUser = user;
-                    profileModel.followVariable = "follow"
+                    profileModel.followVariable = "Follow"
                     console.log(user);
                 });
         }
@@ -154,6 +155,7 @@
                                 if (updatedUser != null) {
                                     $rootScope.currentUser = updatedUser;
                                     profileModel.currentUser = updatedUser;
+                                    profileModel.visitingUser = profileModel.currentUser;
                                 }
                                 else {
                                     //navigateToLoginDialog();
@@ -174,9 +176,5 @@
         profileDialogModel.age = $rootScope.currentUser.Age;
         profileDialogModel.weight = $rootScope.currentUser.Weight;
     }
-
-    //function Unique() {
-    //    return
-    //}
 
 })();

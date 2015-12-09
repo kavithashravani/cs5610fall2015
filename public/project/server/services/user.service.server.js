@@ -18,6 +18,10 @@ module.exports = function(app, userModel, passport) {
             });
     }
 
+    //function registerUser(req, res) {
+    //
+    //}
+
     function isLoggedIn(req, res) {
         res.send(req.isAuthenticated() ? req.user : '0');
     }
@@ -54,10 +58,12 @@ module.exports = function(app, userModel, passport) {
                     userModel
                         .insertUser(user)
                         .then(function(user) {
-                            res.json(user);
+                            req.login(user, function(err) {
+                                res.json(user);
                         });
-                }
-            });
+
+                });
+            }});
     }
 
     function updateUser(req, res) {

@@ -22,6 +22,7 @@
             foodLogModel.deleteItem = deleteItem;
             foodLogModel.retrieveLog = retrieveLog;
             $scope.foodLogData;
+            //$scope.charTab = true;
 
             function init() {
                 if(insertFoodLogItem != undefined) {
@@ -45,7 +46,6 @@
             init();
 
             function deleteItem(foodItemId, userName, ItemDate) {
-                //var _date = $filter('date')(ItemDate, "yyyy-MM-dd")
                 FoodLogService.deleteFoodLogItem(foodItemId, userName, ItemDate)
                     .then(function(foodLogItem) {
                         foodLogModel.logs = foodLogItem;
@@ -107,8 +107,16 @@
 
     function PieChartController($scope) {
         $scope.foodLogData;
+        $scope.chartTab = true;
+
         $scope.$on("changeInfoodLog", function(event, foodLogData) {
             $scope.foodLogData = foodLogData;
+            if($scope.foodLogData.logs.length == 0) {
+                $scope.chartTab = false;
+            }
+            else {
+                $scope.chartTab = true;
+            }
             var chart1 = {};
             chart1.type = "PieChart";
             chart1.cssStyle = "height:200px; width:300px;";

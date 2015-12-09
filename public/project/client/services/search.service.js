@@ -11,12 +11,18 @@
         return searchServiceApi;
 
         function findItems(item) {
-            var deferred = $q.defer();
-            $http.get("/api/search/"+item)
-                .success(function(response) {
-                    deferred.resolve(response)
+            var searchItem = item.split(/\s+/);
+            searchItem.splice(3);
+            return $q.all(searchItem.map(function(item) {
+                    return $http.get("/api/search/" + item);
+            }))
+                .then(function(results) {
+                    var allResults = {};
+                    results.forEach(function (val, i) {
+                        allResults[i] = val.data;
+                    });
+                    return allResults;
                 });
-                return deferred.promise;
         }
     }
 

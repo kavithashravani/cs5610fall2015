@@ -13,21 +13,22 @@
         foodDetailsModel.updateComment = updateComment;
         foodDetailsModel.deleteComment = deleteComment;
         foodDetailsModel.commentMsgTab = true;
+        foodDetailsModel.allComments=[];
 
         function init() {
             $http.get("/api/loggedin/user")
                 .success(function (user) {
                     if(user != '0') {
-                        CommentService.findAllComments(foodId)
-                            .then(function(comments) {
-                                foodDetailsModel.allComments = comments;
-                            });
                         foodDetailsModel.currentUser = $rootScope.currentUser;
                         foodDetailsModel.commentPanelTab = true;
                     }
                     else {
                         foodDetailsModel.commentPanelTab = false;
                     }
+                });
+            CommentService.findAllComments(foodId)
+                .then(function(comments) {
+                    foodDetailsModel.allComments = comments;
                 });
             FoodDetailsService.findDetailsById(foodId)
                 .then(function(details) {
@@ -69,11 +70,6 @@
         }
 
         function comment() {
-            //if(foodDetailsModel.inputComment.match("^\\s+$") || foodDetailsModel.inputComment == undefined) {
-            //    foodDetailsModel.commentMsgTab = false;
-            //    foodDetailsModel.commentMsg = "Type something, cannot be empty";
-            //}
-
                 var comment = {
                     foodApi_ID: foodId,
                     foodName: foodDetailsModel.details.recipe_name,
@@ -132,6 +128,8 @@
                                     $rootScope.foodLogTab = false;
                                     $rootScope.signOutTab = false;
                                     $rootScope.loginTab = true;
+                                    foodDetailsModel.currentUser = $rootScope.currentUser;
+                                    foodDetailsModel.commentPanelTab = true;
                                 }
                                 else {
                                     navigateToLoginDialog();

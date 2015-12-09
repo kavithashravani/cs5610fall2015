@@ -25,7 +25,7 @@
                 .then(function(response) {
                     if(response != null) {
                         $rootScope.currentUser = response;
-                        $location.url("/profile");
+                        $location.url("/profile/"+$rootScope.currentUser.UserName);
                     }
                     else {
                         registerModel.message = "user already exists";

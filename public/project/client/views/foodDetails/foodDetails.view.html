@@ -56,16 +56,11 @@ about-us start
                     </div><!-- .col-md-6 close -->
                     <div class="log-calories col-md-6">
                         <form class="form-horizontal" name="logFoodForm">
-                            <!--<div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">-->
-                                <!--<label for="inputDate" class="control-label">Date</label>-->
-                                <!--<input name="inputDate" ng-model="foodDetailsModel.logDate" type="date" class="form-control" id="inputDate" placeholder="date" required>-->
-                                <!--<span class="error" ng-show="logFoodForm.inputDate.$error.required">choose a date</span>-->
-                            <!--</div>-->
                             <div class="form-group">
                                 <label for="inputDate" class="col-sm-2 control-label">Date:</label>
                                 <div class="col-sm-8">
                                     <input name="inputDate" ng-model="foodDetailsModel.logDate" type="date" class="form-control logFieldWd" id="inputDate" placeholder="date" required>
-                                    <span class="error" ng-show="logFoodForm.inputDate.$error.required">choose a date</span>
+                                    <span class="error" ng-show="logFoodForm.inputDate.$error.required">Choose a Date</span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -77,7 +72,7 @@ about-us start
                                         <option value="dinner">Dinner</option>
                                         <option value="snack">snack</option>
                                     </select>
-                                    <span class="error" ng-show="logFoodForm.category.$error.required">required field</span>
+                                    <span class="error" ng-show="logFoodForm.category.$error.required">Required Field</span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -86,8 +81,8 @@ about-us start
                                     <input style="margin-left: 14px" name="amount" ng-model="foodDetailsModel.serving" type="text" ng-pattern="/^[0-9]*$/" required class="form-control" id="quantity">
                                     <div class="input-group-addon" style="padding-left:30px">serving(s)</div>
                                 </div>
-                                <span class="error" ng-show="logFoodForm.amount.$error.required">Required field</span>
-                                <span class="error" ng-show="logFoodForm.amount.$error.pattern">enter only numbers</span>
+                                <span class="error" ng-show="logFoodForm.amount.$error.required">Required Field</span>
+                                <span class="error" ng-show="logFoodForm.amount.$error.pattern">Enter only Numbers</span>
 
                             </div>
                             <div class="form-group">
@@ -116,11 +111,12 @@ about-us start
                 <div class="col-md-10 col-sm10 col-xs-10">
                     <form name="commentForm">
                         <div class="col-md-8">
-                            <textarea rows="2" cols="55" name="inputComment" ng-model="foodDetailsModel.inputComment" type="text" class="form-control" id="comment" placeholder="write a comment">
+                            <textarea rows="2" cols="55" name="inputComment" required ng-model="foodDetailsModel.inputComment" type="text" class="form-control" id="comment" placeholder="write a comment">
                             </textarea>
+                            <span class="error" ng-show="commentForm.inputComment.$error.required">Cannot be empty</span>
                         </div>
                         <div class="col-md-2">
-                            <a class="btn btn-primary wow bounceIn commentBtn"  ng-click="foodDetailsModel.comment()" role="button">comment</a>
+                            <a class="btn btn-primary wow bounceIn commentBtn"  ng-disabled="commentForm.$invalid" ng-click="commentForm.$invalid || foodDetailsModel.comment()" role="button">comment</a>
                         </div>
                     </form>
                 </div>

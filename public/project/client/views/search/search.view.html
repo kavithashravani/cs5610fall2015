@@ -11,55 +11,37 @@
                         </h1>
                     <h1 class="heading wow fadeInUp"><a ng-hide="signUpTab" id="signUpHref" href="#register">Sign up here</a></h1>
                     <h1> </h1>
-                    <form class="form-inline">
+                    <form name="searchForm" class="form-inline">
                         <div class="form-group">
                             <div class="input-group">
-                                <input ng-model="searchItem" type="text" class="form-control" id="searchItem" placeholder="Search food items to log">
+                                <input name="searchBox" ng-model="searchItem" type="text" class="form-control" ng-pattern="/^[a-zA-Z\s]+$/" required id="searchItem" placeholder="Search food items to log">
                                 <div class="input-group-addon">
-                                    <button ng-click="search()" class="btn btn-default">search</button>
+                                    <button ng-disabled="searchForm.$invalid" ng-click="searchForm.$invalid || search()" class="btn btn-default">search</button>
                                 </div>
                             </div>
                         </div>
                     </form>
-                    <!--<table class="table table-responsive">-->
-                        <!--&lt;!&ndash;recipe_description: "A low carb and low fat banana bread recipe that's perfect for ripe bananas."&ndash;&gt;-->
-                        <!--&lt;!&ndash;recipe_id: "68579"&ndash;&gt;-->
-                        <!--&lt;!&ndash;recipe_image: "http://m.ftscrt.com/static/recipe/a60a2aa2-2cfb-4685-9b16-b2dca0fecced.jpg"&ndash;&gt;-->
-                        <!--&lt;!&ndash;recipe_name: "Banana Bread II"&ndash;&gt;-->
-                        <!--&lt;!&ndash;recipe_url: "http://www&ndash;&gt;-->
-                        <!--<div ng-repeat="rows in searchResults">-->
-                            <!--<tr ng-repeat="result in rows">-->
-
-                            <!--<td><a href="#/food-details/{{result.recipe_id}}"><img ng-src ="{{result.recipe_image}}"></a></td>-->
-                            <!--<td style="color: #A666AB; font-family: 'Comic Sans';">-->
-                            <!--<a href="#/food-details/{{result.recipe_id}}"><span style="font-weight: bold"> {{result.recipe_name}} </span>-->
-                                    <!--<br><br><br>-->
-                                    <!--{{result.recipe_description}}-->
-                            <!--</a>-->
-                            <!--</td>-->
-                        <!--</tr>-->
-
-                        <!--</div>-->
-                    <!--</table>-->
+                    <span class="error searchError" ng-show="searchForm.searchBox.$error.pattern">Enter only alphabets</span>
+                    <span class="error searchError" ng-show="click && (searchResults.length == 0)">No results found..!</span>
                     <div ng-animate="3D Rotate">
-                    <ul class="list-inline" ng-repeat="rows in searchResults">
-                        <li ng-repeat="result in rows">
-                            <ul class="col-md-6">
-                                <span ng-if="project.url"><a href="project.url">{{ project.title }}</a></span>
-                                <span ng-if="!project.url">{{ project.title }}</span>
-                              <li class="col-md-12"> <a href="#/food-details/{{result.recipe_id}}">
-                                  <span ng-if="result.recipe_image">
-                                      <img class="img-circle" ng-src ="{{result.recipe_image}}" >
-                                  </span>
-                                   <span ng-if="!result.recipe_image">
-                                      <img class="img-circle" src="./images/noImage.jpg">
-                                  </span>
-                                  </a>
-                              </li>
-                              <li class="col-md-12"> {{result.recipe_name}} </li>
-                            </ul>
-                        </li>
-                    </ul>
+                        <ul  ng-repeat="rows in searchResults">
+                            <li ng-repeat="result in rows">
+                                <ul class="col-md-4">
+                                    <span ng-if="project.url"><a href="project.url">{{ project.title }}</a></span>
+                                    <span ng-if="!project.url">{{ project.title }}</span>
+                                  <li class="col-md-12"> <a href="#/food-details/{{result.recipe_id}}">
+                                      <span ng-if="result.recipe_image">
+                                          <img class="img-circle" ng-src ="{{result.recipe_image}}" >
+                                      </span>
+                                       <span ng-if="!result.recipe_image">
+                                          <img class="img-circle" src="./images/noImage.jpg">
+                                      </span>
+                                      </a>
+                                  </li>
+                                  <li class="col-md-12 recipeName"> {{result.recipe_name}} </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
 
                 </div>

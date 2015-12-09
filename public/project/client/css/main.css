@@ -1034,6 +1034,11 @@ a.commentDelete:hover {
   color: red;
 }
 
+.searchError {
+  font-size: 20px;
+  font-weight: bold
+}
+
 .chartHeading {
   font-family: "serif";
   font-size: 30px;
@@ -1056,4 +1061,23 @@ a.commentDelete:hover {
 .addBtnWd {
   width: 105%;
 }
+
+.profBtnIcon {
+  padding-bottom: 8px;
+  font-size: 20px;
+}
+
+.profBtn {
+  margin: 4px 4px 4px 4px;
+}
+.recipeName {
+  color: #673AB7;
+  font-weight: bold;
+}
+
+/*.followingBg {*/
+  /*background: #d9edf7;*/
+  /*height:100% !important;*/
+  /*margin: auto;*/
+/*}*/
 

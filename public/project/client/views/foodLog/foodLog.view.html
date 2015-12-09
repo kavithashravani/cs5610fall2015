@@ -134,12 +134,10 @@ about-us start
                                         <input ng-model="foodLogModel.selectDate" ng-change="foodLogModel.retrieveLog()" type="date" class="form-control" id="inputDate" placeholder="date">
                                     </div>
                                 </div>
-                                <div class="col-md-12 chartBg">
-                                    <div ng-controller="PieChartController">
+                                <div  ng-show="chartTab" class="col-md-12 chartBg" ng-controller="PieChartController">
                                         <div class="chartHeading">Day Summary</h1>
                                             <div google-chart chart="chart"> </div>
                                         </div>
-                                    </div>
                                 </div>
                             </form>
                         </div>
